@@ -1,0 +1,503 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		92DA1BF1288B1D0300A21DBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DA1BF0288B1D0300A21DBB /* AppDelegate.swift */; };
+		92DA1BF3288B1D0300A21DBB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DA1BF2288B1D0300A21DBB /* SceneDelegate.swift */; };
+		92DA1BF5288B1D0300A21DBB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DA1BF4288B1D0300A21DBB /* MainViewController.swift */; };
+		92DA1BF8288B1D0300A21DBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92DA1BF6288B1D0300A21DBB /* Main.storyboard */; };
+		92DA1BFA288B1D0500A21DBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92DA1BF9288B1D0500A21DBB /* Assets.xcassets */; };
+		92DA1BFD288B1D0500A21DBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92DA1BFB288B1D0500A21DBB /* LaunchScreen.storyboard */; };
+		92DA1C0A288B1D9E00A21DBB /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DA1C09288B1D9E00A21DBB /* UIView+.swift */; };
+		92DA1C12288B1E6500A21DBB /* MainDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DA1C11288B1E6500A21DBB /* MainDataModel.swift */; };
+		92DA1C18288B1E9B00A21DBB /* Select.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92DA1C17288B1E9B00A21DBB /* Select.storyboard */; };
+		92DA1C1A288B1EA500A21DBB /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DA1C19288B1EA500A21DBB /* SelectViewController.swift */; };
+		92DA1C1C288B1EB000A21DBB /* SelectDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DA1C1B288B1EB000A21DBB /* SelectDataModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		92DA1BED288B1D0300A21DBB /* Tamagotchi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tamagotchi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		92DA1BF0288B1D0300A21DBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		92DA1BF2288B1D0300A21DBB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		92DA1BF4288B1D0300A21DBB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		92DA1BF7288B1D0300A21DBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		92DA1BF9288B1D0500A21DBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		92DA1BFC288B1D0500A21DBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		92DA1BFE288B1D0500A21DBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92DA1C09288B1D9E00A21DBB /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		92DA1C11288B1E6500A21DBB /* MainDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDataModel.swift; sourceTree = "<group>"; };
+		92DA1C17288B1E9B00A21DBB /* Select.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Select.storyboard; sourceTree = "<group>"; };
+		92DA1C19288B1EA500A21DBB /* SelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
+		92DA1C1B288B1EB000A21DBB /* SelectDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDataModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		92DA1BEA288B1D0300A21DBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		92DA1BE4288B1D0300A21DBB = {
+			isa = PBXGroup;
+			children = (
+				92DA1BEF288B1D0300A21DBB /* Tamagotchi */,
+				92DA1BEE288B1D0300A21DBB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		92DA1BEE288B1D0300A21DBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				92DA1BED288B1D0300A21DBB /* Tamagotchi.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		92DA1BEF288B1D0300A21DBB /* Tamagotchi */ = {
+			isa = PBXGroup;
+			children = (
+				92DA1C06288B1D3D00A21DBB /* Global */,
+				92DA1C05288B1D3800A21DBB /* Screen */,
+				92DA1C04288B1D2800A21DBB /* Resource */,
+			);
+			path = Tamagotchi;
+			sourceTree = "<group>";
+		};
+		92DA1C04288B1D2800A21DBB /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				92DA1C0C288B1DBF00A21DBB /* Asset */,
+				92DA1C0B288B1DB100A21DBB /* Storyboard */,
+				92DA1C08288B1D7F00A21DBB /* Support */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		92DA1C05288B1D3800A21DBB /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				92DA1C13288B1E7500A21DBB /* Select */,
+				92DA1C0D288B1DEB00A21DBB /* Main */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		92DA1C06288B1D3D00A21DBB /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				92DA1C07288B1D6C00A21DBB /* Extension */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		92DA1C07288B1D6C00A21DBB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				92DA1C09288B1D9E00A21DBB /* UIView+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		92DA1C08288B1D7F00A21DBB /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				92DA1BFE288B1D0500A21DBB /* Info.plist */,
+				92DA1BF0288B1D0300A21DBB /* AppDelegate.swift */,
+				92DA1BF2288B1D0300A21DBB /* SceneDelegate.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		92DA1C0B288B1DB100A21DBB /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				92DA1BFB288B1D0500A21DBB /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		92DA1C0C288B1DBF00A21DBB /* Asset */ = {
+			isa = PBXGroup;
+			children = (
+				92DA1BF9288B1D0500A21DBB /* Assets.xcassets */,
+			);
+			path = Asset;
+			sourceTree = "<group>";
+		};
+		92DA1C0D288B1DEB00A21DBB /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				92DA1C10288B1E5100A21DBB /* Model */,
+				92DA1C0F288B1E4D00A21DBB /* View */,
+				92DA1C0E288B1E4800A21DBB /* Controller */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		92DA1C0E288B1E4800A21DBB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				92DA1BF4288B1D0300A21DBB /* MainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		92DA1C0F288B1E4D00A21DBB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				92DA1BF6288B1D0300A21DBB /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		92DA1C10288B1E5100A21DBB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				92DA1C11288B1E6500A21DBB /* MainDataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		92DA1C13288B1E7500A21DBB /* Select */ = {
+			isa = PBXGroup;
+			children = (
+				92DA1C16288B1E8600A21DBB /* Model */,
+				92DA1C15288B1E8100A21DBB /* View */,
+				92DA1C14288B1E7C00A21DBB /* Controller */,
+			);
+			path = Select;
+			sourceTree = "<group>";
+		};
+		92DA1C14288B1E7C00A21DBB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				92DA1C19288B1EA500A21DBB /* SelectViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		92DA1C15288B1E8100A21DBB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				92DA1C17288B1E9B00A21DBB /* Select.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		92DA1C16288B1E8600A21DBB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				92DA1C1B288B1EB000A21DBB /* SelectDataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		92DA1BEC288B1D0300A21DBB /* Tamagotchi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92DA1C01288B1D0500A21DBB /* Build configuration list for PBXNativeTarget "Tamagotchi" */;
+			buildPhases = (
+				92DA1BE9288B1D0300A21DBB /* Sources */,
+				92DA1BEA288B1D0300A21DBB /* Frameworks */,
+				92DA1BEB288B1D0300A21DBB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tamagotchi;
+			productName = Tamagotchi;
+			productReference = 92DA1BED288B1D0300A21DBB /* Tamagotchi.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		92DA1BE5288B1D0300A21DBB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					92DA1BEC288B1D0300A21DBB = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 92DA1BE8288B1D0300A21DBB /* Build configuration list for PBXProject "Tamagotchi" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 92DA1BE4288B1D0300A21DBB;
+			productRefGroup = 92DA1BEE288B1D0300A21DBB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				92DA1BEC288B1D0300A21DBB /* Tamagotchi */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		92DA1BEB288B1D0300A21DBB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92DA1C18288B1E9B00A21DBB /* Select.storyboard in Resources */,
+				92DA1BFD288B1D0500A21DBB /* LaunchScreen.storyboard in Resources */,
+				92DA1BFA288B1D0500A21DBB /* Assets.xcassets in Resources */,
+				92DA1BF8288B1D0300A21DBB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		92DA1BE9288B1D0300A21DBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92DA1C1C288B1EB000A21DBB /* SelectDataModel.swift in Sources */,
+				92DA1C0A288B1D9E00A21DBB /* UIView+.swift in Sources */,
+				92DA1BF5288B1D0300A21DBB /* MainViewController.swift in Sources */,
+				92DA1BF1288B1D0300A21DBB /* AppDelegate.swift in Sources */,
+				92DA1C12288B1E6500A21DBB /* MainDataModel.swift in Sources */,
+				92DA1C1A288B1EA500A21DBB /* SelectViewController.swift in Sources */,
+				92DA1BF3288B1D0300A21DBB /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		92DA1BF6288B1D0300A21DBB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				92DA1BF7288B1D0300A21DBB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		92DA1BFB288B1D0500A21DBB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				92DA1BFC288B1D0500A21DBB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		92DA1BFF288B1D0500A21DBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		92DA1C00288B1D0500A21DBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		92DA1C02288B1D0500A21DBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PU64TS56AD;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Tamagotchi/Resource/Support/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = soyeon.Tamagotchi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		92DA1C03288B1D0500A21DBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PU64TS56AD;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Tamagotchi/Resource/Support/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = soyeon.Tamagotchi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		92DA1BE8288B1D0300A21DBB /* Build configuration list for PBXProject "Tamagotchi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92DA1BFF288B1D0500A21DBB /* Debug */,
+				92DA1C00288B1D0500A21DBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92DA1C01288B1D0500A21DBB /* Build configuration list for PBXNativeTarget "Tamagotchi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92DA1C02288B1D0500A21DBB /* Debug */,
+				92DA1C03288B1D0500A21DBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 92DA1BE5288B1D0300A21DBB /* Project object */;
+}
