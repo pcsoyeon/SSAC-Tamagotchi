@@ -1,25 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17150" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zry-PS-k1d">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17122"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="s0d-6b-0kx">
+        <!--다마고치 선택하기-->
+        <scene sceneID="02E-V8-Ql9">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                <collectionViewController storyboardIdentifier="SelectCollectionViewController" title="다마고치 선택하기" id="niZ-hk-oXx" customClass="SelectCollectionViewController" customModule="Tamagotchi" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="RpE-Xc-qc7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="otv-bt-AuF">
+                            <size key="itemSize" width="190" height="190"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TamagotchiCollectionViewCell" id="naH-iE-KnA" customClass="TamagotchiCollectionViewCell" customModule="Tamagotchi" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="190" height="190"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="MPy-7Q-9Qh">
+                                    <rect key="frame" x="0.0" y="0.0" width="190" height="190"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RnZ-JB-R2r">
+                                            <rect key="frame" x="50" y="0.0" width="90" height="90"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="90" id="dbY-h8-tYw"/>
+                                                <constraint firstAttribute="width" secondItem="RnZ-JB-R2r" secondAttribute="height" multiplier="1:1" id="qBn-48-cf5"/>
+                                            </constraints>
+                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gIG-rA-xtq">
+                                            <rect key="frame" x="61.5" y="95" width="67" height="31"/>
+                                            <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="gIG-rA-xtq" firstAttribute="centerX" secondItem="MPy-7Q-9Qh" secondAttribute="centerX" id="4nB-vU-czN"/>
+                                        <constraint firstItem="gIG-rA-xtq" firstAttribute="top" secondItem="RnZ-JB-R2r" secondAttribute="bottom" constant="5" id="aQH-Xn-M0I"/>
+                                        <constraint firstItem="RnZ-JB-R2r" firstAttribute="top" secondItem="MPy-7Q-9Qh" secondAttribute="top" id="ltR-8t-A9R"/>
+                                        <constraint firstItem="RnZ-JB-R2r" firstAttribute="centerX" secondItem="MPy-7Q-9Qh" secondAttribute="centerX" id="uDR-OK-MHc"/>
+                                        <constraint firstItem="RnZ-JB-R2r" firstAttribute="top" secondItem="MPy-7Q-9Qh" secondAttribute="top" id="yGB-aL-v22"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="190" height="190"/>
+                                <connections>
+                                    <outlet property="tamagotchiImageView" destination="RnZ-JB-R2r" id="AzB-XL-PdW"/>
+                                    <outlet property="tamagotchiNameButton" destination="gIG-rA-xtq" id="snM-Nv-fb5"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="niZ-hk-oXx" id="kVT-Sl-u9H"/>
+                            <outlet property="delegate" destination="niZ-hk-oXx" id="TSE-09-hCr"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="dgv-h3-aAM"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nku-QR-Q6o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1015.9420289855074" y="303.34821428571428"/>
+        </scene>
+        <!--Navigation View Controller-->
+        <scene sceneID="KIl-m6-nVW">
+            <objects>
+                <navigationController storyboardIdentifier="UINavigationViewController" automaticallyAdjustsScrollViewInsets="NO" id="zry-PS-k1d" customClass="UINavigationViewController" customModule="Tamagotchi" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="d7Y-a7-gEY">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="niZ-hk-oXx" kind="relationship" relationship="rootViewController" id="8Bh-wZ-RPf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Gl-zf-ST4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="105.79710144927537" y="303.34821428571428"/>
         </scene>
     </scenes>
     <resources>
