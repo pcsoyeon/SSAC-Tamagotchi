@@ -80,8 +80,12 @@ final class TamagochiDetailViewController: UIViewController {
     
     @IBAction func touchUpStartButton(_ sender: Any) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        guard let viewController = storyBoard.instantiateViewController(withIdentifier: UINavigationViewController.identifier) as? UINavigationViewController else { return }
-        viewController.modalPresentationStyle = .fullScreen
-        present(viewController, animated: false)
+        guard let viewController = storyBoard.instantiateViewController(withIdentifier: MainViewController.identifier) as? MainViewController else { return }
+        viewController.tamagotchi = self.tamagotchi
+        
+        let destinationViewController = UINavigationViewController(rootViewController: viewController)
+        destinationViewController.modalPresentationStyle = .fullScreen
+        
+        present(destinationViewController, animated: false)
     }
 }
