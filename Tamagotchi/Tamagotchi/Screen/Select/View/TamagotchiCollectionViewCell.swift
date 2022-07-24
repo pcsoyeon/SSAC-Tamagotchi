@@ -28,16 +28,17 @@ class TamagotchiCollectionViewCell: UICollectionViewCell {
         tamagotchiNameButton.layer.borderWidth = 1
         tamagotchiNameButton.layer.borderColor = UIColor.foregroundColor.cgColor
         
-        tamagotchiNameButton.backgroundColor = .backgroundColor
-        tamagotchiNameButton.setTitleColor(.foregroundColor, for: .normal)
+        tamagotchiNameButton.layer.cornerRadius = 8
         
-        tamagotchiNameButton.titleLabel?.font = .systemFont(ofSize: 9, weight: .regular)
+        tamagotchiNameButton.backgroundColor = .backgroundColor
     }
     
     internal func configureCell(_ data: TamagotchiDataModel) {
         tamagotchiImageView.image = UIImage(named: data.image)
         
-        tamagotchiNameButton.setTitle(data.name, for: .normal)
+        let riceAttribute = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13)]
+        let riceAttributedTitle = NSAttributedString(string: "\(data.name)", attributes: riceAttribute)
+        tamagotchiNameButton.setAttributedTitle(riceAttributedTitle, for: .normal)
     }
     
 }
