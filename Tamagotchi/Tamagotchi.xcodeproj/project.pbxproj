@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92AA1E13288D6A1700CB1D7E /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AA1E12288D6A1700CB1D7E /* UIColor+.swift */; };
 		92DA1BF1288B1D0300A21DBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DA1BF0288B1D0300A21DBB /* AppDelegate.swift */; };
 		92DA1BF3288B1D0300A21DBB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DA1BF2288B1D0300A21DBB /* SceneDelegate.swift */; };
 		92DA1BF5288B1D0300A21DBB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DA1BF4288B1D0300A21DBB /* MainViewController.swift */; };
@@ -18,9 +19,11 @@
 		92DA1C18288B1E9B00A21DBB /* Select.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92DA1C17288B1E9B00A21DBB /* Select.storyboard */; };
 		92DA1C1A288B1EA500A21DBB /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DA1C19288B1EA500A21DBB /* SelectViewController.swift */; };
 		92DA1C1C288B1EB000A21DBB /* SelectDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DA1C1B288B1EB000A21DBB /* SelectDataModel.swift */; };
+		92DA1C1E288B93EA00A21DBB /* UINavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DA1C1D288B93EA00A21DBB /* UINavigationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		92AA1E12288D6A1700CB1D7E /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		92DA1BED288B1D0300A21DBB /* Tamagotchi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tamagotchi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92DA1BF0288B1D0300A21DBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92DA1BF2288B1D0300A21DBB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +37,7 @@
 		92DA1C17288B1E9B00A21DBB /* Select.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Select.storyboard; sourceTree = "<group>"; };
 		92DA1C19288B1EA500A21DBB /* SelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
 		92DA1C1B288B1EB000A21DBB /* SelectDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDataModel.swift; sourceTree = "<group>"; };
+		92DA1C1D288B93EA00A21DBB /* UINavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				92DA1C09288B1D9E00A21DBB /* UIView+.swift */,
+				92AA1E12288D6A1700CB1D7E /* UIColor+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -148,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				92DA1BF4288B1D0300A21DBB /* MainViewController.swift */,
+				92DA1C1D288B93EA00A21DBB /* UINavigationViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -274,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92DA1C1E288B93EA00A21DBB /* UINavigationViewController.swift in Sources */,
 				92DA1C1C288B1EB000A21DBB /* SelectDataModel.swift in Sources */,
 				92DA1C0A288B1D9E00A21DBB /* UIView+.swift in Sources */,
 				92DA1BF5288B1D0300A21DBB /* MainViewController.swift in Sources */,
@@ -281,6 +288,7 @@
 				92DA1C12288B1E6500A21DBB /* MainDataModel.swift in Sources */,
 				92DA1C1A288B1EA500A21DBB /* SelectViewController.swift in Sources */,
 				92DA1BF3288B1D0300A21DBB /* SceneDelegate.swift in Sources */,
+				92AA1E13288D6A1700CB1D7E /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
