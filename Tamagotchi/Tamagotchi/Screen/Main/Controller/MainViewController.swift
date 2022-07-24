@@ -9,6 +9,8 @@ import UIKit
 
 final class MainViewController: UIViewController {
 
+    static let identifier = "MainViewController"
+    
     private var userName: String = ""
     
     override func viewDidLoad() {

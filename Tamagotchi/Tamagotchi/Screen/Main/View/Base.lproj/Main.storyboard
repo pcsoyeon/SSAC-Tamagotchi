@@ -27,6 +27,7 @@
         <!--Navigation View Controller-->
         <scene sceneID="Y1s-Ma-mWh">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1l9-gu-U4f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="UINavigationViewController" automaticallyAdjustsScrollViewInsets="NO" id="9AZ-Ft-8Eg" customClass="UINavigationViewController" customModule="Tamagotchi" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ahO-TB-WKY">
@@ -38,7 +39,6 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="z0H-8f-tI5"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1l9-gu-U4f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="93.75"/>
         </scene>

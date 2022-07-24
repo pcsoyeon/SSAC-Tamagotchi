@@ -39,7 +39,7 @@ final class TamagochiDetailViewController: UIViewController {
     // MARK: - Custom Method
     
     private func setUI() {
-        view.backgroundColor = UIColor(white: 0, alpha: 0.5)
+        view.backgroundColor = UIColor(white: 0, alpha: 0.2)
         
         backView.backgroundColor = .backgroundColor
         backView.layer.cornerRadius = 8
@@ -79,6 +79,9 @@ final class TamagochiDetailViewController: UIViewController {
     }
     
     @IBAction func touchUpStartButton(_ sender: Any) {
-        
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        guard let viewController = storyBoard.instantiateViewController(withIdentifier: UINavigationViewController.identifier) as? UINavigationViewController else { return }
+        viewController.modalPresentationStyle = .fullScreen
+        present(viewController, animated: false)
     }
 }

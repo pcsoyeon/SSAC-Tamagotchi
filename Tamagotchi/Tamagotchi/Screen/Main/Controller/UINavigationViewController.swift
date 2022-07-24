@@ -8,6 +8,8 @@
 import UIKit
 
 class UINavigationViewController: UINavigationController {
+    
+    static let identifier = "UINavigationViewController"
 
     override func viewDidLoad() {
         super.viewDidLoad()
