@@ -61,7 +61,7 @@ extension SelectCollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.item < 3 {
             guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: TamagochiDetailViewController.identifier) as? TamagochiDetailViewController else { return }
-            viewController.modalTransitionStyle = .crossDissolve
+            viewController.modalTransitionStyle = .coverVertical
             viewController.modalPresentationStyle = .overCurrentContext
             viewController.tamagotchi = tamagotchis.tamagotchi[indexPath.item]
             present(viewController, animated: true)
