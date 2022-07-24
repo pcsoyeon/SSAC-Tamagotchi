@@ -53,6 +53,12 @@ final class MainViewController: UIViewController {
         setUI()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem?.tintColor = .foregroundColor
+    }
+    
     // MARK: - Custom Method
     
     private func setNavigationUI() {
@@ -66,7 +72,8 @@ final class MainViewController: UIViewController {
     // MARK: - @objc
     
     @objc func touchUpInfoButton() {
-        let viewController = InfoTableViewController()
+        let storyBoard = UIStoryboard(name: "Info", bundle: nil)
+        guard let viewController = storyBoard.instantiateViewController(withIdentifier: InfoTableViewController.identifier) as? InfoTableViewController else { return }
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
