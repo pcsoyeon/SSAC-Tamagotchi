@@ -15,11 +15,36 @@ final class MainViewController: UIViewController {
     
     private var userName: String = "대장"
     
-    private var level: Int = 0
-    private var riceCount: Int = 0
-    private var waterDropCount: Int = 0
+    private var level: Int = 1 {
+        didSet {
+            tamagotchiInfoLabel.text = "LV\(level) • 밥알 \(riceCount)개 • 물방울 \(waterDropCount)개"
+            
+            if level > 9 {
+                tamagotchiImageView.image = UIImage(named: "\(tamagotchiIndex)-\(9)")
+            } else {
+                tamagotchiImageView.image = UIImage(named: "\(tamagotchiIndex)-\(level)")
+            }
+        }
+    }
+    
+    private var riceCount: Int = 0 {
+        didSet {
+            tamagotchiInfoLabel.text = "LV\(level) • 밥알 \(riceCount)개 • 물방울 \(waterDropCount)개"
+            
+            level = calculateLevel(riceCount: riceCount, waterDropCount: waterDropCount)
+        }
+    }
+    
+    private var waterDropCount: Int = 0 {
+        didSet {
+            tamagotchiInfoLabel.text = "LV\(level) • 밥알 \(riceCount)개 • 물방울 \(waterDropCount)개"
+            
+            level = calculateLevel(riceCount: riceCount, waterDropCount: waterDropCount)
+        }
+    }
     
     internal var tamagotchi: TamagotchiDataModel = TamagotchiDataModel(image: "", name: "", description: "", level: 0)
+    internal var tamagotchiIndex: Int = 1
     
     private var bubbleMessage: [String] = ["복습 합시다", "테이블 뷰 컨트롤러와 뷰 컨트롤러는 어떤 차이가 있을까요?", "배고파요. 밥 주세요.", "Github에 Push 해주세요.", "오늘도 복습하세요!!!", "1일 1커밋 하고 계신가요??"]
     
@@ -67,17 +92,9 @@ final class MainViewController: UIViewController {
         navigationItem.rightBarButtonItem?.tintColor = .foregroundColor
         
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.foregroundColor]
+        
+        navigationController?.navigationBar.backgroundColor = .backgroundColor
     }
-    
-    // MARK: - @objc
-    
-    @objc func touchUpInfoButton() {
-        let storyBoard = UIStoryboard(name: "Info", bundle: nil)
-        guard let viewController = storyBoard.instantiateViewController(withIdentifier: InfoTableViewController.identifier) as? InfoTableViewController else { return }
-        self.navigationController?.pushViewController(viewController, animated: true)
-    }
-    
-    // MARK: - Custom Method
     
     private func setUI() {
         lineViews.forEach {
@@ -89,11 +106,14 @@ final class MainViewController: UIViewController {
         setLabel()
         setTextField()
         setButton()
+        
+        setLabel()
     }
     
     private func setImageView() {
         bubbleImageView.image = UIImage(named: "bubble")
-        tamagotchiImageView.image = UIImage(named: tamagotchi.image)
+        
+        tamagotchiImageView.image = UIImage(named: "\(tamagotchiIndex)-\(level)")
     }
     
     private func setLabel() {
@@ -111,8 +131,8 @@ final class MainViewController: UIViewController {
     
     private func setTextField() {
         [riceTextField, waterTextField].forEach {
-            $0?.delegate = self
             $0?.borderStyle = .none
+            $0?.keyboardType = .numberPad
         }
         
         let centeredParagraphStyle = NSMutableParagraphStyle()
@@ -158,19 +178,37 @@ final class MainViewController: UIViewController {
         waterButton.setAttributedTitle(waterAttributedTitle, for: .normal)
     }
     
+    // MARK: - @objc
+    
+    @objc func touchUpInfoButton() {
+        let storyBoard = UIStoryboard(name: "Info", bundle: nil)
+        guard let viewController = storyBoard.instantiateViewController(withIdentifier: InfoTableViewController.identifier) as? InfoTableViewController else { return }
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
     // MARK: - IBAction
     
     @IBAction func touchUpRiceButton(_ sender: Any) {
         bubbleMessageLabel.text = bubbleMessage.randomElement()
+        
+        if riceTextField.hasText {
+            if let riceCount = Int(riceTextField.text ?? "0") {
+                self.riceCount = riceCount
+            }
+        } else {
+            riceCount += 1
+        }
     }
     
     @IBAction func touchUpWaterButton(_ sender: Any) {
         bubbleMessageLabel.text = bubbleMessage.randomElement()
+        
+        if waterTextField.hasText {
+            if let waterDropCount = Int(waterTextField.text ?? "0") {
+                self.waterDropCount = waterDropCount
+            }
+        } else {
+            waterDropCount += 1
+        }
     }
-}
-
-// MARK: - UITextField Delegate
-
-extension MainViewController: UITextFieldDelegate {
-    
 }

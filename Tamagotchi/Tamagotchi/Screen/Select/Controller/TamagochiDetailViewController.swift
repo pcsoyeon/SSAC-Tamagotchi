@@ -27,7 +27,8 @@ final class TamagochiDetailViewController: UIViewController {
     
     // MARK: - Property
     
-    internal var tamagotchi: TamagotchiDataModel = TamagotchiDataModel(image: "", name: "", description: "", level: 0)
+    internal var tamagotchi: TamagotchiDataModel = TamagotchiDataModel(image: "", name: "", description: "", level: 1)
+    internal var tamagotchiIndex: Int = 0
     
     // MARK: - Life Cycle
     
@@ -99,6 +100,7 @@ final class TamagochiDetailViewController: UIViewController {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         guard let viewController = storyBoard.instantiateViewController(withIdentifier: MainViewController.identifier) as? MainViewController else { return }
         viewController.tamagotchi = self.tamagotchi
+        viewController.tamagotchiIndex = self.tamagotchiIndex
         
         let destinationViewController = UINavigationViewController(rootViewController: viewController)
         destinationViewController.modalPresentationStyle = .fullScreen

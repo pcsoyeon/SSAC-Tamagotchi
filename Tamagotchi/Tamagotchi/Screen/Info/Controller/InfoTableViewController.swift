@@ -38,8 +38,9 @@ final class InfoTableViewController: UITableViewController {
     
     private func setNaivgationBarUI() {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.foregroundColor]
-        
         navigationItem.title = "설정"
+        
+        navigationController?.navigationBar.backgroundColor = .backgroundColor
     }
     
     private func setUI() {

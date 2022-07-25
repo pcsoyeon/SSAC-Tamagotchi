@@ -66,6 +66,7 @@ extension SelectCollectionViewController {
             viewController.modalTransitionStyle = .coverVertical
             viewController.modalPresentationStyle = .overCurrentContext
             viewController.tamagotchi = tamagotchis.tamagotchi[indexPath.item]
+            viewController.tamagotchiIndex = indexPath.item
             present(viewController, animated: true)
         }
     }

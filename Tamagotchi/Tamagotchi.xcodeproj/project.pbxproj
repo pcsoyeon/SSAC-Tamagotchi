@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		92AA1E13288D6A1700CB1D7E /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AA1E12288D6A1700CB1D7E /* UIColor+.swift */; };
+		92AA1E13288D6A1700CB1D7E /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AA1E12288D6A1700CB1D7E /* UIColor+Extension.swift */; };
 		92AA1E15288D84CD00CB1D7E /* SelectCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AA1E14288D84CD00CB1D7E /* SelectCollectionViewController.swift */; };
 		92AA1E17288D850D00CB1D7E /* TamagotchiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AA1E16288D850D00CB1D7E /* TamagotchiCollectionViewCell.swift */; };
 		92AA1E19288D901B00CB1D7E /* TamagochiDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AA1E18288D901B00CB1D7E /* TamagochiDetailViewController.swift */; };
@@ -17,13 +17,14 @@
 		92AA1E26288DC3BB00CB1D7E /* UserNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AA1E25288DC3BB00CB1D7E /* UserNameViewController.swift */; };
 		92AA1E2B288E178300CB1D7E /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AA1E2A288E178300CB1D7E /* Constant.swift */; };
 		92AA1E2E288E2D3600CB1D7E /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 92AA1E2D288E2D3600CB1D7E /* IQKeyboardManagerSwift */; };
+		92AA1E30288E369F00CB1D7E /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AA1E2F288E369F00CB1D7E /* UIViewController+Extension.swift */; };
 		92DA1BF1288B1D0300A21DBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DA1BF0288B1D0300A21DBB /* AppDelegate.swift */; };
 		92DA1BF3288B1D0300A21DBB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DA1BF2288B1D0300A21DBB /* SceneDelegate.swift */; };
 		92DA1BF5288B1D0300A21DBB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DA1BF4288B1D0300A21DBB /* MainViewController.swift */; };
 		92DA1BF8288B1D0300A21DBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92DA1BF6288B1D0300A21DBB /* Main.storyboard */; };
 		92DA1BFA288B1D0500A21DBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92DA1BF9288B1D0500A21DBB /* Assets.xcassets */; };
 		92DA1BFD288B1D0500A21DBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92DA1BFB288B1D0500A21DBB /* LaunchScreen.storyboard */; };
-		92DA1C0A288B1D9E00A21DBB /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DA1C09288B1D9E00A21DBB /* UIView+.swift */; };
+		92DA1C0A288B1D9E00A21DBB /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DA1C09288B1D9E00A21DBB /* UIView+Extension.swift */; };
 		92DA1C12288B1E6500A21DBB /* MainDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DA1C11288B1E6500A21DBB /* MainDataModel.swift */; };
 		92DA1C18288B1E9B00A21DBB /* Select.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92DA1C17288B1E9B00A21DBB /* Select.storyboard */; };
 		92DA1C1C288B1EB000A21DBB /* TamagotchiDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DA1C1B288B1EB000A21DBB /* TamagotchiDataModel.swift */; };
@@ -31,7 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		92AA1E12288D6A1700CB1D7E /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		92AA1E12288D6A1700CB1D7E /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		92AA1E14288D84CD00CB1D7E /* SelectCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCollectionViewController.swift; sourceTree = "<group>"; };
 		92AA1E16288D850D00CB1D7E /* TamagotchiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiCollectionViewCell.swift; sourceTree = "<group>"; };
 		92AA1E18288D901B00CB1D7E /* TamagochiDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagochiDetailViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +41,7 @@
 		92AA1E23288DBE4500CB1D7E /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		92AA1E25288DC3BB00CB1D7E /* UserNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameViewController.swift; sourceTree = "<group>"; };
 		92AA1E2A288E178300CB1D7E /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		92AA1E2F288E369F00CB1D7E /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		92DA1BED288B1D0300A21DBB /* Tamagotchi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tamagotchi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92DA1BF0288B1D0300A21DBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92DA1BF2288B1D0300A21DBB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +50,7 @@
 		92DA1BF9288B1D0500A21DBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92DA1BFC288B1D0500A21DBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92DA1BFE288B1D0500A21DBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		92DA1C09288B1D9E00A21DBB /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		92DA1C09288B1D9E00A21DBB /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		92DA1C11288B1E6500A21DBB /* MainDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDataModel.swift; sourceTree = "<group>"; };
 		92DA1C17288B1E9B00A21DBB /* Select.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Select.storyboard; sourceTree = "<group>"; };
 		92DA1C1B288B1EB000A21DBB /* TamagotchiDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiDataModel.swift; sourceTree = "<group>"; };
@@ -159,8 +161,9 @@
 		92DA1C07288B1D6C00A21DBB /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				92DA1C09288B1D9E00A21DBB /* UIView+.swift */,
-				92AA1E12288D6A1700CB1D7E /* UIColor+.swift */,
+				92DA1C09288B1D9E00A21DBB /* UIView+Extension.swift */,
+				92AA1E12288D6A1700CB1D7E /* UIColor+Extension.swift */,
+				92AA1E2F288E369F00CB1D7E /* UIViewController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -346,17 +349,18 @@
 				92DA1C1E288B93EA00A21DBB /* UINavigationViewController.swift in Sources */,
 				92AA1E26288DC3BB00CB1D7E /* UserNameViewController.swift in Sources */,
 				92DA1C1C288B1EB000A21DBB /* TamagotchiDataModel.swift in Sources */,
-				92DA1C0A288B1D9E00A21DBB /* UIView+.swift in Sources */,
+				92DA1C0A288B1D9E00A21DBB /* UIView+Extension.swift in Sources */,
 				92AA1E1D288D9ED600CB1D7E /* InfoTableViewController.swift in Sources */,
 				92DA1BF5288B1D0300A21DBB /* MainViewController.swift in Sources */,
 				92DA1BF1288B1D0300A21DBB /* AppDelegate.swift in Sources */,
 				92AA1E17288D850D00CB1D7E /* TamagotchiCollectionViewCell.swift in Sources */,
+				92AA1E30288E369F00CB1D7E /* UIViewController+Extension.swift in Sources */,
 				92DA1C12288B1E6500A21DBB /* MainDataModel.swift in Sources */,
 				92AA1E2B288E178300CB1D7E /* Constant.swift in Sources */,
 				92AA1E19288D901B00CB1D7E /* TamagochiDetailViewController.swift in Sources */,
 				92AA1E15288D84CD00CB1D7E /* SelectCollectionViewController.swift in Sources */,
 				92DA1BF3288B1D0300A21DBB /* SceneDelegate.swift in Sources */,
-				92AA1E13288D6A1700CB1D7E /* UIColor+.swift in Sources */,
+				92AA1E13288D6A1700CB1D7E /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
