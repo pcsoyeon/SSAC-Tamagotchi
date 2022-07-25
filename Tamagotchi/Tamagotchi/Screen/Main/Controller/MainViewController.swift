@@ -133,6 +133,7 @@ final class MainViewController: UIViewController {
         [riceTextField, waterTextField].forEach {
             $0?.borderStyle = .none
             $0?.keyboardType = .numberPad
+            addDoneButtonOnNumpad(textField: $0!)
         }
         
         let centeredParagraphStyle = NSMutableParagraphStyle()
@@ -178,6 +179,21 @@ final class MainViewController: UIViewController {
         waterButton.setAttributedTitle(waterAttributedTitle, for: .normal)
     }
     
+    func addDoneButtonOnNumpad(textField: UITextField) {
+        let keypadToolbar: UIToolbar = UIToolbar()
+        
+        keypadToolbar.tintColor = .foregroundColor
+        
+        keypadToolbar.items = [
+            UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: self, action: nil),
+            UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: textField, action: #selector(UITextField.resignFirstResponder))
+        ]
+        
+        keypadToolbar.sizeToFit()
+        
+        textField.inputAccessoryView = keypadToolbar
+    }
+    
     // MARK: - @objc
     
     @objc func touchUpInfoButton() {
@@ -193,11 +209,17 @@ final class MainViewController: UIViewController {
         
         if riceTextField.hasText {
             if let riceCount = Int(riceTextField.text ?? "0") {
-                self.riceCount = riceCount
+                if  riceCount >= 100 {
+                    showToast(message: "너무 많아요🥲\n99개까지 먹을 수 있어요", font: .systemFont(ofSize: 13, weight: .regular))
+                } else {
+                    self.riceCount += riceCount
+                }
             }
         } else {
             riceCount += 1
         }
+        
+        riceTextField.text = ""
     }
     
     @IBAction func touchUpWaterButton(_ sender: Any) {
@@ -205,10 +227,16 @@ final class MainViewController: UIViewController {
         
         if waterTextField.hasText {
             if let waterDropCount = Int(waterTextField.text ?? "0") {
-                self.waterDropCount = waterDropCount
+                if  waterDropCount >= 50 {
+                    showToast(message: "너무 많아요🥲\n50개까지 먹을 수 있어요", font: .systemFont(ofSize: 13, weight: .regular))
+                } else {
+                    self.waterDropCount += waterDropCount
+                }
             }
         } else {
             waterDropCount += 1
         }
+        
+        waterTextField.text = ""
     }
 }
