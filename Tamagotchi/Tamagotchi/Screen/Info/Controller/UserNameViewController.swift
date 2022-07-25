@@ -12,6 +12,8 @@ final class UserNameViewController: UIViewController {
     // MARK: - Property
     
     static let identifier = "UserNameViewController"
+    
+    private var userName: String = "대장"
 
     // MARK: - UI Property
     
@@ -35,7 +37,7 @@ final class UserNameViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(touchUpSaveButton))
         navigationItem.rightBarButtonItem?.tintColor = .foregroundColor
         
-        navigationItem.title = "대장님 이름 정하기"
+        navigationItem.title = "\(userName)님 이름 정하기"
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.foregroundColor]
     }
     
@@ -46,6 +48,11 @@ final class UserNameViewController: UIViewController {
     
     private func setTextField() {
         userNameTextField.borderStyle = .none
+        
+        userNameTextField.text = "\(userName)"
+        userNameTextField.textColor = .foregroundColor
+        userNameTextField.tintColor = .foregroundColor
+        
     }
     
     // MARK: - @objc

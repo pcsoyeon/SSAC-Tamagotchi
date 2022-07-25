@@ -119,6 +119,9 @@
                             <outlet property="delegate" destination="alg-2P-ZWx" id="YbG-Zn-Uf0"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="userNameLabel" destination="zy1-00-acj" id="5bW-8l-53S"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RAC-r6-WDT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -140,15 +143,15 @@
                                 </constraints>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="anM-dH-axa">
-                                <rect key="frame" x="20" y="65" width="374" height="50"/>
+                                <rect key="frame" x="20" y="55" width="374" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Qdv-Fe-dw9"/>
+                                    <constraint firstAttribute="height" constant="45" id="Qdv-Fe-dw9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UfG-Nf-8yZ">
-                                <rect key="frame" x="20" y="114" width="374" height="1"/>
+                                <rect key="frame" x="20" y="99" width="374" height="1"/>
                                 <color key="backgroundColor" name="foregroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="GNg-v9-MVp"/>
@@ -165,7 +168,7 @@
                             <constraint firstItem="UfG-Nf-8yZ" firstAttribute="trailing" secondItem="anM-dH-axa" secondAttribute="trailing" id="YKV-oD-TAU"/>
                             <constraint firstItem="UfG-Nf-8yZ" firstAttribute="leading" secondItem="anM-dH-axa" secondAttribute="leading" id="azw-wO-LWh"/>
                             <constraint firstItem="4uc-Yp-oPh" firstAttribute="leading" secondItem="46l-X2-l6Z" secondAttribute="leading" id="pPm-Xe-d2T"/>
-                            <constraint firstItem="anM-dH-axa" firstAttribute="top" secondItem="4uc-Yp-oPh" secondAttribute="bottom" constant="20" id="w16-P4-e5L"/>
+                            <constraint firstItem="anM-dH-axa" firstAttribute="top" secondItem="4uc-Yp-oPh" secondAttribute="bottom" constant="10" id="w16-P4-e5L"/>
                             <constraint firstItem="UfG-Nf-8yZ" firstAttribute="bottom" secondItem="anM-dH-axa" secondAttribute="bottom" id="yrK-hY-nar"/>
                         </constraints>
                     </view>

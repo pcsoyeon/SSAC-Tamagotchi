@@ -115,8 +115,17 @@ final class MainViewController: UIViewController {
             $0?.borderStyle = .none
         }
         
-        riceTextField.placeholder = "밥주세용"
-        waterTextField.placeholder = "물주세용"
+        let centeredParagraphStyle = NSMutableParagraphStyle()
+        centeredParagraphStyle.alignment = .center
+        riceTextField.attributedPlaceholder = NSAttributedString(
+            string: "밥주세용",
+            attributes: [.paragraphStyle: centeredParagraphStyle]
+        )
+        
+        waterTextField.attributedPlaceholder = NSAttributedString(
+            string: "물주세용",
+            attributes: [.paragraphStyle: centeredParagraphStyle]
+        )
     }
     
     private func setButton() {

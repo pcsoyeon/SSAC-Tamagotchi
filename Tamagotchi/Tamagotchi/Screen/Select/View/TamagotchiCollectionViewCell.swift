@@ -31,6 +31,10 @@ class TamagotchiCollectionViewCell: UICollectionViewCell {
         tamagotchiNameButton.layer.cornerRadius = 8
         
         tamagotchiNameButton.backgroundColor = .backgroundColor
+        
+        var config = UIButton.Configuration.plain()
+        config.baseForegroundColor = .foregroundColor
+        tamagotchiNameButton.configuration = config
     }
     
     internal func configureCell(_ data: TamagotchiDataModel) {

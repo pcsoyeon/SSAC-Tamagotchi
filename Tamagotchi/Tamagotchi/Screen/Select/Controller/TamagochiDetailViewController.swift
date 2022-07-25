@@ -46,6 +46,18 @@ final class TamagochiDetailViewController: UIViewController {
         
         tamagotchiImageView.image = UIImage(named: tamagotchi.image)
         
+        setLineView()
+        setLabel()
+        setButton()
+    }
+    
+    private func setLineView() {
+        [firstLineView, secondLineView].forEach {
+            $0?.backgroundColor = .foregroundColor
+        }
+    }
+    
+    private func setLabel() {
         tamagotchiNameLabel.text = tamagotchi.name
         tamagotchiNameLabel.textColor = .foregroundColor
         tamagotchiNameLabel.font = .systemFont(ofSize: 13, weight: .regular)
@@ -55,21 +67,26 @@ final class TamagochiDetailViewController: UIViewController {
         tamagotchiDescriptionLabel.font = .systemFont(ofSize: 14, weight: .regular)
         tamagotchiDescriptionLabel.numberOfLines = 0
         tamagotchiDescriptionLabel.textAlignment = .center
-        
+    }
+    
+    private func setButton() {
         [cancelButton, startButton].forEach {
-            $0?.setTitleColor(.foregroundColor, for: .normal)
-            $0?.setTitleColor(.foregroundColor, for: .highlighted)
-            $0?.titleLabel?.font = .systemFont(ofSize: 10, weight: .regular)
+            var config = UIButton.Configuration.plain()
+            config.baseForegroundColor = .foregroundColor
+            
+            $0?.configuration = config
         }
         
-        cancelButton.setTitle("취소", for: .normal)
+        let cancelAttribute = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13)]
+        let cancelAttributedTitle = NSAttributedString(string: "취소", attributes: cancelAttribute)
+        cancelButton.setAttributedTitle(cancelAttributedTitle, for: .normal)
+        
         cancelButton.backgroundColor = .foregroundColor.withAlphaComponent(0.1)
         
+        let startAttribute = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13)]
+        let startAttributedTitle = NSAttributedString(string: "시작하기", attributes: startAttribute)
+        startButton.setAttributedTitle(startAttributedTitle, for: .normal)
         startButton.setTitle("시작하기", for: .normal)
-        
-        [firstLineView, secondLineView].forEach {
-            $0?.backgroundColor = .foregroundColor
-        }
     }
     
     // MARK: - UIButton

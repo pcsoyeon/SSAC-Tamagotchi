@@ -13,6 +13,8 @@ final class InfoTableViewController: UITableViewController {
     
     static let identifier = "InfoTableViewController"
     
+    @IBOutlet weak var userNameLabel: UILabel!
+    
     // MARK: - Life Cycle
     
     override func viewWillAppear(_ animated: Bool) {
@@ -22,6 +24,8 @@ final class InfoTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUI()
+        setTableView()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -42,6 +46,13 @@ final class InfoTableViewController: UITableViewController {
         view.backgroundColor = .backgroundColor
         tableView.backgroundColor = .backgroundColor
     }
+    
+    private func setTableView() {
+        userNameLabel.text = "\(Constant.userInfo.userName)"
+        userNameLabel.textColor = .foregroundColor
+        
+        userNameLabel.font = .systemFont(ofSize: 13, weight: .regular)
+    }
 }
 
 // MARK: - Protocol
@@ -59,7 +70,8 @@ extension InfoTableViewController {
             self.navigationController?.pushViewController(viewController, animated: true)
         /// 다마고치 변경하기
         case 1:
-            let viewController = UIViewController()
+            let storyBoard = UIStoryboard(name: "Select", bundle: nil)
+            guard let viewController = storyBoard.instantiateViewController(withIdentifier: SelectCollectionViewController.identifier) as? SelectCollectionViewController else { return }
             self.navigationController?.pushViewController(viewController, animated: true)
         /// 데이터 초기화
         case 2:
