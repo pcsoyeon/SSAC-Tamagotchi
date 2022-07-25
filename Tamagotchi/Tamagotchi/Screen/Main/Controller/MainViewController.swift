@@ -15,6 +15,8 @@ final class MainViewController: UIViewController {
     
     private var level: Int = 1 {
         didSet {
+            UserDefaults.standard.set(level, forKey: "level")
+            
             tamagotchiInfoLabel.text = "LV\(level) • 밥알 \(riceCount)개 • 물방울 \(waterDropCount)개"
             
             if level > 9 {
@@ -27,6 +29,8 @@ final class MainViewController: UIViewController {
     
     private var riceCount: Int = 0 {
         didSet {
+            UserDefaults.standard.set(riceCount, forKey: "riceCount")
+            
             tamagotchiInfoLabel.text = "LV\(level) • 밥알 \(riceCount)개 • 물방울 \(waterDropCount)개"
             
             level = calculateLevel(riceCount: riceCount, waterDropCount: waterDropCount)
@@ -35,6 +39,8 @@ final class MainViewController: UIViewController {
     
     private var waterDropCount: Int = 0 {
         didSet {
+            UserDefaults.standard.set(waterDropCount, forKey: "waterDropCount")
+            
             tamagotchiInfoLabel.text = "LV\(level) • 밥알 \(riceCount)개 • 물방울 \(waterDropCount)개"
             
             level = calculateLevel(riceCount: riceCount, waterDropCount: waterDropCount)
@@ -74,6 +80,7 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+        setData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -108,7 +115,6 @@ final class MainViewController: UIViewController {
         setLabel()
         setTextField()
         setButton()
-        
         setLabel()
     }
     
@@ -181,7 +187,7 @@ final class MainViewController: UIViewController {
         waterButton.setAttributedTitle(waterAttributedTitle, for: .normal)
     }
     
-    func addDoneButtonOnNumpad(textField: UITextField) {
+    private func addDoneButtonOnNumpad(textField: UITextField) {
         let keypadToolbar: UIToolbar = UIToolbar()
         
         keypadToolbar.tintColor = .foregroundColor
@@ -194,6 +200,11 @@ final class MainViewController: UIViewController {
         keypadToolbar.sizeToFit()
         
         textField.inputAccessoryView = keypadToolbar
+    }
+    
+    private func setData() {
+        self.riceCount = UserDefaults.standard.integer(forKey: "riceCount")
+        self.waterDropCount = UserDefaults.standard.integer(forKey: "waterDropCount")
     }
     
     // MARK: - @objc

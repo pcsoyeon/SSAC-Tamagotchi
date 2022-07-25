@@ -88,7 +88,16 @@ extension InfoTableViewController {
             let alertController = UIAlertController(title: "데이터 초기화", message: "정말 다시 처음부터 시작하실 건가용?", preferredStyle: .alert)
             
             let cancelButton = UIAlertAction(title: "아냐!", style: .cancel)
-            let okayButton = UIAlertAction(title: "웅", style: .default)
+            let okayButton = UIAlertAction(title: "웅", style: .default) { _ in
+                let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+                let sceneDelegate = windowScene?.delegate as? SceneDelegate
+                
+                let storyBoard = UIStoryboard(name: "Select", bundle: nil)
+                guard let viewController = storyBoard.instantiateViewController(withIdentifier: UINavigationViewController.identifier) as? UINavigationViewController else { return }
+                
+                sceneDelegate?.window?.rootViewController = viewController
+                sceneDelegate?.window?.makeKeyAndVisible()
+            }
             
             alertController.addAction(cancelButton)
             alertController.addAction(okayButton)
