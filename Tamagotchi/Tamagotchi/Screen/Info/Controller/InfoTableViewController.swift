@@ -13,7 +13,13 @@ final class InfoTableViewController: UITableViewController {
     
     static let identifier = "InfoTableViewController"
     
-    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var userNameLabel: UILabel! {
+        didSet {
+            if let userName = UserDefaults.standard.string(forKey: "userName") {
+                userNameLabel.text = "\(userName)"
+            }
+        }
+    }
     
     // MARK: - Life Cycle
     
@@ -49,7 +55,10 @@ final class InfoTableViewController: UITableViewController {
     }
     
     private func setTableView() {
-        userNameLabel.text = "\(Constant.userInfo.userName)"
+        userNameLabel.text = "대장"
+        if let userName = UserDefaults.standard.string(forKey: "userName") {
+            userNameLabel.text = "\(userName)"
+        }
         userNameLabel.textColor = .foregroundColor
         
         userNameLabel.font = .systemFont(ofSize: 13, weight: .regular)

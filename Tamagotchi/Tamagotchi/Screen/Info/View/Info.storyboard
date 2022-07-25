@@ -157,6 +157,12 @@
                                     <constraint firstAttribute="height" constant="1" id="GNg-v9-MVp"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecC-Jh-pHF">
+                                <rect key="frame" x="20" y="108" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="foregroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="46l-X2-l6Z"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -167,13 +173,16 @@
                             <constraint firstItem="4uc-Yp-oPh" firstAttribute="top" secondItem="46l-X2-l6Z" secondAttribute="top" id="TZW-Gc-HsX"/>
                             <constraint firstItem="UfG-Nf-8yZ" firstAttribute="trailing" secondItem="anM-dH-axa" secondAttribute="trailing" id="YKV-oD-TAU"/>
                             <constraint firstItem="UfG-Nf-8yZ" firstAttribute="leading" secondItem="anM-dH-axa" secondAttribute="leading" id="azw-wO-LWh"/>
+                            <constraint firstItem="ecC-Jh-pHF" firstAttribute="leading" secondItem="46l-X2-l6Z" secondAttribute="leading" constant="20" id="j57-i4-Vg4"/>
                             <constraint firstItem="4uc-Yp-oPh" firstAttribute="leading" secondItem="46l-X2-l6Z" secondAttribute="leading" id="pPm-Xe-d2T"/>
                             <constraint firstItem="anM-dH-axa" firstAttribute="top" secondItem="4uc-Yp-oPh" secondAttribute="bottom" constant="10" id="w16-P4-e5L"/>
+                            <constraint firstItem="ecC-Jh-pHF" firstAttribute="top" secondItem="anM-dH-axa" secondAttribute="bottom" constant="8" id="xLI-yc-B6f"/>
                             <constraint firstItem="UfG-Nf-8yZ" firstAttribute="bottom" secondItem="anM-dH-axa" secondAttribute="bottom" id="yrK-hY-nar"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="userNameTextField" destination="anM-dH-axa" id="4lv-Ba-83P"/>
+                        <outlet property="warningLabel" destination="ecC-Jh-pHF" id="z83-iw-iNz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ms-ha-KPP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

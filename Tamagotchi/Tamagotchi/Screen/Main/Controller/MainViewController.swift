@@ -13,8 +13,6 @@ final class MainViewController: UIViewController {
     
     static let identifier = "MainViewController"
     
-    private var userName: String = "대장"
-    
     private var level: Int = 1 {
         didSet {
             tamagotchiInfoLabel.text = "LV\(level) • 밥알 \(riceCount)개 • 물방울 \(waterDropCount)개"
@@ -70,11 +68,11 @@ final class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         bubbleMessageLabel.text = bubbleMessage.randomElement()
+        setNavigationUI()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNavigationUI()
         setUI()
     }
     
@@ -87,7 +85,11 @@ final class MainViewController: UIViewController {
     // MARK: - Custom Method
     
     private func setNavigationUI() {
-        navigationItem.title = "\(userName)님의 다마고치"
+        if let userName = UserDefaults.standard.string(forKey: "userName") {
+            navigationItem.title = "\(userName)님의 다마고치"
+        } else {
+            navigationItem.title = "대장님의 다마고치"
+        }
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle"), style: .plain, target: self, action: #selector(touchUpInfoButton))
         navigationItem.rightBarButtonItem?.tintColor = .foregroundColor
         
