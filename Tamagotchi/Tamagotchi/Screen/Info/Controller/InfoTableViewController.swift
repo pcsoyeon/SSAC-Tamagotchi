@@ -13,24 +13,18 @@ final class InfoTableViewController: UITableViewController {
     
     static let identifier = "InfoTableViewController"
     
-    @IBOutlet weak var userNameLabel: UILabel! {
-        didSet {
-            if let userName = UserDefaults.standard.string(forKey: "userName") {
-                userNameLabel.text = "\(userName)"
-            }
-        }
-    }
+    @IBOutlet weak var userNameLabel: UILabel!
     
     // MARK: - Life Cycle
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        userNameLabel.text = "\(UserDefaults.standard.string(forKey: "userName") ?? "대장")"
         setNaivgationBarUI()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUI()
         setTableView()
     }
     
@@ -47,18 +41,13 @@ final class InfoTableViewController: UITableViewController {
         navigationItem.title = "설정"
         
         navigationController?.navigationBar.backgroundColor = .backgroundColor
-    }
-    
-    private func setUI() {
-        view.backgroundColor = .backgroundColor
-        tableView.backgroundColor = .backgroundColor
+        navigationController?.addCustomBottomLine(color: .foregroundColor, height: 1)
     }
     
     private func setTableView() {
-        userNameLabel.text = "대장"
-        if let userName = UserDefaults.standard.string(forKey: "userName") {
-            userNameLabel.text = "\(userName)"
-        }
+        tableView.backgroundColor = .backgroundColor
+        
+        userNameLabel.text = "\(UserDefaults.standard.string(forKey: Constant.UserDefaults.userName) ?? "대장")"
         userNameLabel.textColor = .foregroundColor
         
         userNameLabel.font = .systemFont(ofSize: 13, weight: .regular)
@@ -82,6 +71,7 @@ extension InfoTableViewController {
         case 1:
             let storyBoard = UIStoryboard(name: "Select", bundle: nil)
             guard let viewController = storyBoard.instantiateViewController(withIdentifier: SelectCollectionViewController.identifier) as? SelectCollectionViewController else { return }
+            viewController.viewType = .channge
             self.navigationController?.pushViewController(viewController, animated: true)
         /// 데이터 초기화
         case 2:
@@ -89,6 +79,10 @@ extension InfoTableViewController {
             
             let cancelButton = UIAlertAction(title: "아냐!", style: .cancel)
             let okayButton = UIAlertAction(title: "웅", style: .default) { _ in
+                UserDefaults.standard.removeObject(forKey: Constant.UserDefaults.userName)
+                UserDefaults.standard.removeObject(forKey: Constant.UserDefaults.riceCount)
+                UserDefaults.standard.removeObject(forKey: Constant.UserDefaults.waterDropCount)
+                
                 let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
                 let sceneDelegate = windowScene?.delegate as? SceneDelegate
                 

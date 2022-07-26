@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -16,7 +17,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="RpE-Xc-qc7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="otv-bt-AuF">
                             <size key="itemSize" width="190" height="190"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -38,25 +39,26 @@
                                                 <constraint firstAttribute="width" secondItem="RnZ-JB-R2r" secondAttribute="height" multiplier="1:1" id="qBn-48-cf5"/>
                                             </constraints>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gIG-rA-xtq">
-                                            <rect key="frame" x="61.5" y="95" width="67" height="31"/>
-                                            <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                            <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEf-bM-3Oq">
+                                            <rect key="frame" x="74" y="100" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="gIG-rA-xtq" firstAttribute="centerX" secondItem="MPy-7Q-9Qh" secondAttribute="centerX" id="4nB-vU-czN"/>
-                                        <constraint firstItem="gIG-rA-xtq" firstAttribute="top" secondItem="RnZ-JB-R2r" secondAttribute="bottom" constant="5" id="aQH-Xn-M0I"/>
+                                        <constraint firstItem="cEf-bM-3Oq" firstAttribute="centerX" secondItem="MPy-7Q-9Qh" secondAttribute="centerX" id="1lh-xL-lbe"/>
                                         <constraint firstItem="RnZ-JB-R2r" firstAttribute="top" secondItem="MPy-7Q-9Qh" secondAttribute="top" id="ltR-8t-A9R"/>
                                         <constraint firstItem="RnZ-JB-R2r" firstAttribute="centerX" secondItem="MPy-7Q-9Qh" secondAttribute="centerX" id="uDR-OK-MHc"/>
                                         <constraint firstItem="RnZ-JB-R2r" firstAttribute="top" secondItem="MPy-7Q-9Qh" secondAttribute="top" id="yGB-aL-v22"/>
+                                        <constraint firstItem="cEf-bM-3Oq" firstAttribute="top" secondItem="RnZ-JB-R2r" secondAttribute="bottom" constant="10" id="zcH-UG-dmi"/>
                                     </constraints>
                                 </collectionViewCellContentView>
+                                <color key="backgroundColor" name="backgroundColor"/>
                                 <size key="customSize" width="190" height="190"/>
                                 <connections>
                                     <outlet property="tamagotchiImageView" destination="RnZ-JB-R2r" id="AzB-XL-PdW"/>
-                                    <outlet property="tamagotchiNameButton" destination="gIG-rA-xtq" id="snM-Nv-fb5"/>
+                                    <outlet property="tamagotchiNameLabel" destination="cEf-bM-3Oq" id="3JB-Lf-gCf"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -71,10 +73,10 @@
             </objects>
             <point key="canvasLocation" x="1015.9420289855074" y="303.34821428571428"/>
         </scene>
-        <!--Tamagochi Detail View Controller-->
+        <!--Pop Up View Controller-->
         <scene sceneID="zvV-60-g8R">
             <objects>
-                <viewController storyboardIdentifier="TamagochiDetailViewController" id="5iR-gG-Xfa" customClass="TamagochiDetailViewController" customModule="Tamagotchi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TamagochiDetailViewController" id="5iR-gG-Xfa" customClass="PopUpViewController" customModule="Tamagotchi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4eu-pc-AhI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -204,6 +206,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="backgroundColor">
+            <color red="0.96100002527236938" green="0.98799997568130493" blue="0.98799997568130493" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

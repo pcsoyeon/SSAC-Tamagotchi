@@ -16,7 +16,7 @@ class TamagotchiCollectionViewCell: UICollectionViewCell {
     // MARK: - UI Property
     
     @IBOutlet weak var tamagotchiImageView: UIImageView!
-    @IBOutlet weak var tamagotchiNameButton: UIButton!
+    @IBOutlet weak var tamagotchiNameLabel: UILabel!
     
     // MARK: - Custom Method
     
@@ -25,24 +25,18 @@ class TamagotchiCollectionViewCell: UICollectionViewCell {
         
         tamagotchiImageView.layer.cornerRadius = tamagotchiImageView.frame.width / 2
 
-        tamagotchiNameButton.layer.borderWidth = 1
-        tamagotchiNameButton.layer.borderColor = UIColor.foregroundColor.cgColor
-        
-        tamagotchiNameButton.layer.cornerRadius = 8
-        
-        tamagotchiNameButton.backgroundColor = .backgroundColor
-        
-        var config = UIButton.Configuration.plain()
-        config.baseForegroundColor = .foregroundColor
-        tamagotchiNameButton.configuration = config
+        tamagotchiNameLabel.font = .systemFont(ofSize: 13, weight: .regular)
+        tamagotchiNameLabel.textColor = .foregroundColor
+        tamagotchiNameLabel.sizeToFit()
+        tamagotchiNameLabel.layer.borderColor = UIColor.foregroundColor.cgColor
+        tamagotchiNameLabel.layer.borderWidth = 1
+        tamagotchiNameLabel.layer.cornerRadius = 3
     }
     
     internal func configureCell(_ data: TamagotchiDataModel) {
         tamagotchiImageView.image = UIImage(named: data.image)
         
-        let riceAttribute = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13)]
-        let riceAttributedTitle = NSAttributedString(string: "\(data.name)", attributes: riceAttribute)
-        tamagotchiNameButton.setAttributedTitle(riceAttributedTitle, for: .normal)
+        tamagotchiNameLabel.text = "  \(data.name)  "
     }
     
 }

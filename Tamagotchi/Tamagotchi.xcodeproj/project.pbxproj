@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92158DDD2890031E0049A8FF /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92158DDC2890031E0049A8FF /* UINavigationController+Extension.swift */; };
 		92AA1E13288D6A1700CB1D7E /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AA1E12288D6A1700CB1D7E /* UIColor+Extension.swift */; };
 		92AA1E15288D84CD00CB1D7E /* SelectCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AA1E14288D84CD00CB1D7E /* SelectCollectionViewController.swift */; };
 		92AA1E17288D850D00CB1D7E /* TamagotchiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AA1E16288D850D00CB1D7E /* TamagotchiCollectionViewCell.swift */; };
-		92AA1E19288D901B00CB1D7E /* TamagochiDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AA1E18288D901B00CB1D7E /* TamagochiDetailViewController.swift */; };
+		92AA1E19288D901B00CB1D7E /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AA1E18288D901B00CB1D7E /* PopUpViewController.swift */; };
 		92AA1E1D288D9ED600CB1D7E /* InfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AA1E1C288D9ED600CB1D7E /* InfoTableViewController.swift */; };
 		92AA1E1F288DBAA200CB1D7E /* Info.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92AA1E1E288DBAA200CB1D7E /* Info.storyboard */; };
 		92AA1E24288DBE4500CB1D7E /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92AA1E23288DBE4500CB1D7E /* Color.xcassets */; };
@@ -32,10 +33,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		92158DDC2890031E0049A8FF /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
 		92AA1E12288D6A1700CB1D7E /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		92AA1E14288D84CD00CB1D7E /* SelectCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCollectionViewController.swift; sourceTree = "<group>"; };
 		92AA1E16288D850D00CB1D7E /* TamagotchiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiCollectionViewCell.swift; sourceTree = "<group>"; };
-		92AA1E18288D901B00CB1D7E /* TamagochiDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagochiDetailViewController.swift; sourceTree = "<group>"; };
+		92AA1E18288D901B00CB1D7E /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		92AA1E1C288D9ED600CB1D7E /* InfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewController.swift; sourceTree = "<group>"; };
 		92AA1E1E288DBAA200CB1D7E /* Info.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Info.storyboard; sourceTree = "<group>"; };
 		92AA1E23288DBE4500CB1D7E /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				92DA1C09288B1D9E00A21DBB /* UIView+Extension.swift */,
 				92AA1E12288D6A1700CB1D7E /* UIColor+Extension.swift */,
 				92AA1E2F288E369F00CB1D7E /* UIViewController+Extension.swift */,
+				92158DDC2890031E0049A8FF /* UINavigationController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -244,7 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				92AA1E14288D84CD00CB1D7E /* SelectCollectionViewController.swift */,
-				92AA1E18288D901B00CB1D7E /* TamagochiDetailViewController.swift */,
+				92AA1E18288D901B00CB1D7E /* PopUpViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -357,7 +360,8 @@
 				92AA1E30288E369F00CB1D7E /* UIViewController+Extension.swift in Sources */,
 				92DA1C12288B1E6500A21DBB /* MainDataModel.swift in Sources */,
 				92AA1E2B288E178300CB1D7E /* Constant.swift in Sources */,
-				92AA1E19288D901B00CB1D7E /* TamagochiDetailViewController.swift in Sources */,
+				92158DDD2890031E0049A8FF /* UINavigationController+Extension.swift in Sources */,
+				92AA1E19288D901B00CB1D7E /* PopUpViewController.swift in Sources */,
 				92AA1E15288D84CD00CB1D7E /* SelectCollectionViewController.swift in Sources */,
 				92DA1BF3288B1D0300A21DBB /* SceneDelegate.swift in Sources */,
 				92AA1E13288D6A1700CB1D7E /* UIColor+Extension.swift in Sources */,

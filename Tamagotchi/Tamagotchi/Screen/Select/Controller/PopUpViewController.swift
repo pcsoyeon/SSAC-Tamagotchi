@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class TamagochiDetailViewController: UIViewController {
+final class PopUpViewController: UIViewController {
     
     static let identifier = "TamagochiDetailViewController"
 
@@ -28,7 +28,10 @@ final class TamagochiDetailViewController: UIViewController {
     // MARK: - Property
     
     internal var tamagotchi: TamagotchiDataModel = TamagotchiDataModel(image: "", name: "", description: "", level: 1)
+    
     internal var tamagotchiIndex: Int = 0
+    
+    internal var viewType: ViewType = .select
     
     // MARK: - Life Cycle
     
@@ -85,9 +88,9 @@ final class TamagochiDetailViewController: UIViewController {
         cancelButton.backgroundColor = .foregroundColor.withAlphaComponent(0.1)
         
         let startAttribute = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13)]
-        let startAttributedTitle = NSAttributedString(string: "시작하기", attributes: startAttribute)
+        let startAttributedTitle = NSAttributedString(string: "\(viewType.buttonTitle)", attributes: startAttribute)
         startButton.setAttributedTitle(startAttributedTitle, for: .normal)
-        startButton.setTitle("시작하기", for: .normal)
+        startButton.setTitle("\(viewType.buttonTitle)", for: .normal)
     }
     
     // MARK: - UIButton

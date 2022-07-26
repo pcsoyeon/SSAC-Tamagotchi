@@ -50,7 +50,7 @@ final class MainViewController: UIViewController {
     internal var tamagotchi: TamagotchiDataModel = TamagotchiDataModel(image: "", name: "", description: "", level: 0)
     internal var tamagotchiIndex: Int = 1
     
-    private var bubbleMessage: [String] = ["복습 합시다", "테이블 뷰 컨트롤러와 뷰 컨트롤러는 어떤 차이가 있을까요?", "배고파요. 밥 주세요.", "Github에 Push 해주세요.", "오늘도 복습하세요!!!", "1일 1커밋 하고 계신가요??"]
+    private var bubbleMessage: [String] = ["복습 합시다", "테이블 뷰 컨트롤러와 뷰 컨트롤러는 어떤 차이가 있을까요?", "배고파요. 밥 주세요.", "Github에 Push 해주세요.", "오늘도 복습하세요!!!", "1일 1커밋 하고 계신가요??", "지금 잠이 오세요? 열심히 사세요. \(UserDefaults.standard.string(forKey: "userName") ?? "대장")"]
     
     // MARK: - UI Property
     
@@ -75,12 +75,12 @@ final class MainViewController: UIViewController {
         super.viewWillAppear(animated)
         bubbleMessageLabel.text = bubbleMessage.randomElement()
         setNavigationUI()
+        setStatusBar(.backgroundColor)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-        setData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -92,11 +92,8 @@ final class MainViewController: UIViewController {
     // MARK: - Custom Method
     
     private func setNavigationUI() {
-        if let userName = UserDefaults.standard.string(forKey: "userName") {
-            navigationItem.title = "\(userName)님의 다마고치"
-        } else {
-            navigationItem.title = "대장님의 다마고치"
-        }
+        navigationItem.title = "\(UserDefaults.standard.string(forKey: Constant.UserDefaults.userName) ?? "대장")님의 다마고치"
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle"), style: .plain, target: self, action: #selector(touchUpInfoButton))
         navigationItem.rightBarButtonItem?.tintColor = .foregroundColor
         
@@ -109,7 +106,6 @@ final class MainViewController: UIViewController {
         lineViews.forEach {
             $0.backgroundColor = .foregroundColor
         }
-        view.backgroundColor = .backgroundColor
         
         setImageView()
         setLabel()
@@ -200,11 +196,6 @@ final class MainViewController: UIViewController {
         keypadToolbar.sizeToFit()
         
         textField.inputAccessoryView = keypadToolbar
-    }
-    
-    private func setData() {
-        self.riceCount = UserDefaults.standard.integer(forKey: "riceCount")
-        self.waterDropCount = UserDefaults.standard.integer(forKey: "waterDropCount")
     }
     
     // MARK: - @objc

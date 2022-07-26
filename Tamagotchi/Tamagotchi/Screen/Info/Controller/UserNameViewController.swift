@@ -42,7 +42,6 @@ final class UserNameViewController: UIViewController {
     }
     
     private func setUI() {
-        view.backgroundColor = .backgroundColor
         setTextField()
         setLabel()
     }
@@ -50,10 +49,7 @@ final class UserNameViewController: UIViewController {
     private func setTextField() {
         userNameTextField.borderStyle = .none
         
-        userNameTextField.text = "대장"
-        if let userName = UserDefaults.standard.string(forKey: "userName") {
-            userNameTextField.text = "\(userName)"
-        }
+        userNameTextField.text = "\(UserDefaults.standard.string(forKey: Constant.UserDefaults.userName) ?? "대장")"
         
         userNameTextField.textColor = .foregroundColor
         userNameTextField.tintColor = .foregroundColor
@@ -84,5 +80,10 @@ extension UserNameViewController: UITextFieldDelegate {
         if let textCount = textField.text?.count {
             warningLabel.isHidden = ((textCount <= 6) && (textCount >= 2)) ? true : false
         }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let newLength = (textField.text?.count)! + string.count - range.length
+        return !(newLength > 6)
     }
 }

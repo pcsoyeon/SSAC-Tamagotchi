@@ -7,6 +7,29 @@
 
 import UIKit
 
+enum ViewType {
+    case select
+    case channge
+    
+    var title: String {
+        switch self {
+        case .select:
+            return "다마고치 선택하기"
+        case .channge:
+            return "다마고치 변경하기"
+        }
+    }
+    
+    var buttonTitle: String {
+        switch self {
+        case .select:
+            return "시작하기"
+        case .channge:
+            return "변경하기"
+        }
+    }
+}
+
 final class SelectCollectionViewController: UICollectionViewController {
 
     // MARK: - Property
@@ -15,17 +38,28 @@ final class SelectCollectionViewController: UICollectionViewController {
        
     private var tamagotchis: Tamagotchi = Tamagotchi()
     
+    internal var viewType: ViewType = .select {
+        didSet {
+            navigationItem.title = viewType.title
+        }
+    }
+    
     // MARK: - Life Cycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNavigationBarUI()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNavigationBarUI()
         setCollectionView()
-        setUI()
     }
     
+    // MARK: - Custom Method
+    
     private func setNavigationBarUI() {
-        navigationItem.title = "다마고치 선택하기"
+        navigationItem.title = viewType.title
     }
     
     private func setCollectionView() {
@@ -38,11 +72,7 @@ final class SelectCollectionViewController: UICollectionViewController {
         layout.minimumLineSpacing = spacing
         layout.minimumInteritemSpacing = spacing
         collectionView.collectionViewLayout = layout
-        collectionView.backgroundColor = .clear
-    }
-    
-    private func setUI() {
-        view.backgroundColor = .backgroundColor
+        collectionView.backgroundColor = .backgroundColor
     }
 }
 
@@ -62,11 +92,12 @@ extension SelectCollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.item < 3 {
-            guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: TamagochiDetailViewController.identifier) as? TamagochiDetailViewController else { return }
+            guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: PopUpViewController.identifier) as? PopUpViewController else { return }
             viewController.modalTransitionStyle = .coverVertical
             viewController.modalPresentationStyle = .overCurrentContext
             viewController.tamagotchi = tamagotchis.tamagotchi[indexPath.item]
             viewController.tamagotchiIndex = indexPath.item
+            viewController.viewType = self.viewType
             present(viewController, animated: true)
         }
     }
