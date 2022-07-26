@@ -126,7 +126,12 @@ final class MainViewController: UIViewController {
             $0?.font = .systemFont(ofSize: 13, weight: .medium)
         }
         
-        tamagotchiNameLabel.text = "\(tamagotchi.name)"
+        tamagotchiNameLabel.text = "  \(tamagotchi.name)  "
+        tamagotchiNameLabel.layer.borderWidth = 1
+        tamagotchiNameLabel.layer.borderColor = UIColor.foregroundColor.cgColor
+        tamagotchiNameLabel.layer.cornerRadius = 3
+        tamagotchiNameLabel.sizeToFit()
+        
         tamagotchiInfoLabel.text = "LV\(level) • 밥알 \(riceCount)개 • 물방울 \(waterDropCount)개"
         
         bubbleMessageLabel.textAlignment = .center
