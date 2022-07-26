@@ -21,15 +21,17 @@ final class MainViewController: UIViewController {
             
             if level > 9 {
                 tamagotchiImageView.image = UIImage(named: "\(tamagotchiIndex)-\(9)")
+                UserDefaults.standard.set("\(tamagotchiIndex)-\(9)", forKey: Constant.UserDefaults.tamagotchiImageName)
             } else {
                 tamagotchiImageView.image = UIImage(named: "\(tamagotchiIndex)-\(level)")
+                UserDefaults.standard.set("\(tamagotchiIndex)-\(level)", forKey: Constant.UserDefaults.tamagotchiImageName)
             }
         }
     }
     
-    private var riceCount: Int = 0 {
+    private var riceCount: Int = UserDefaults.standard.integer(forKey: Constant.UserDefaults.riceCount) {
         didSet {
-            UserDefaults.standard.set(riceCount, forKey: "riceCount")
+            UserDefaults.standard.set(riceCount, forKey: Constant.UserDefaults.riceCount)
             
             tamagotchiInfoLabel.text = "LV\(level) • 밥알 \(riceCount)개 • 물방울 \(waterDropCount)개"
             
@@ -37,9 +39,9 @@ final class MainViewController: UIViewController {
         }
     }
     
-    private var waterDropCount: Int = 0 {
+    private var waterDropCount: Int = UserDefaults.standard.integer(forKey: Constant.UserDefaults.waterDropCount) {
         didSet {
-            UserDefaults.standard.set(waterDropCount, forKey: "waterDropCount")
+            UserDefaults.standard.set(waterDropCount, forKey: Constant.UserDefaults.waterDropCount)
             
             tamagotchiInfoLabel.text = "LV\(level) • 밥알 \(riceCount)개 • 물방울 \(waterDropCount)개"
             
@@ -47,8 +49,11 @@ final class MainViewController: UIViewController {
         }
     }
     
-    internal var tamagotchi: TamagotchiDataModel = TamagotchiDataModel(image: "", name: "", description: "", level: 0)
-    internal var tamagotchiIndex: Int = 1
+    internal var tamagotchiIndex: Int = 1 {
+        didSet {
+            UserDefaults.standard.set("\(tamagotchiIndex)-\(level)", forKey: Constant.UserDefaults.tamagotchiImageName)
+        }
+    }
     
     private var bubbleMessage: [String] = ["복습 합시다", "테이블 뷰 컨트롤러와 뷰 컨트롤러는 어떤 차이가 있을까요?", "배고파요. 밥 주세요.", "Github에 Push 해주세요.", "오늘도 복습하세요!!!", "1일 1커밋 하고 계신가요??", "지금 잠이 오세요? 열심히 사세요. \(UserDefaults.standard.string(forKey: "userName") ?? "대장")"]
     
@@ -117,7 +122,9 @@ final class MainViewController: UIViewController {
     private func setImageView() {
         bubbleImageView.image = UIImage(named: "bubble")
         
-        tamagotchiImageView.image = UIImage(named: "\(tamagotchiIndex)-\(level)")
+        level = calculateLevel(riceCount: riceCount, waterDropCount: waterDropCount)
+        
+        tamagotchiImageView.image = UIImage(named: UserDefaults.standard.string(forKey: Constant.UserDefaults.tamagotchiImageName) ?? "\(tamagotchiIndex)-\(level)")
     }
     
     private func setLabel() {
@@ -126,13 +133,13 @@ final class MainViewController: UIViewController {
             $0?.font = .systemFont(ofSize: 13, weight: .medium)
         }
         
-        tamagotchiNameLabel.text = "  \(UserDefaults.standard.string(forKey: Constant.UserDefaults.tamagotchiName)!)  "
+        tamagotchiNameLabel.text = "  \(UserDefaults.standard.string(forKey: Constant.UserDefaults.tamagotchiName) ?? "다마고치")  "
         tamagotchiNameLabel.layer.borderWidth = 1
         tamagotchiNameLabel.layer.borderColor = UIColor.foregroundColor.cgColor
         tamagotchiNameLabel.layer.cornerRadius = 3
         tamagotchiNameLabel.sizeToFit()
         
-        tamagotchiInfoLabel.text = "LV\(level) • 밥알 \(riceCount)개 • 물방울 \(waterDropCount)개"
+        tamagotchiInfoLabel.text = "LV\(level) • 밥알 \(UserDefaults.standard.integer(forKey: Constant.UserDefaults.riceCount))개 • 물방울 \(UserDefaults.standard.integer(forKey: Constant.UserDefaults.waterDropCount))개"
         
         bubbleMessageLabel.textAlignment = .center
         bubbleMessageLabel.numberOfLines = 0
