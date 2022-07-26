@@ -79,6 +79,7 @@ extension InfoTableViewController {
             
             let cancelButton = UIAlertAction(title: "아냐!", style: .cancel)
             let okayButton = UIAlertAction(title: "웅", style: .default) { _ in
+                UserDefaults.standard.removeObject(forKey: Constant.UserDefaults.tamagotchiName)
                 UserDefaults.standard.removeObject(forKey: Constant.UserDefaults.userName)
                 UserDefaults.standard.removeObject(forKey: Constant.UserDefaults.riceCount)
                 UserDefaults.standard.removeObject(forKey: Constant.UserDefaults.waterDropCount)

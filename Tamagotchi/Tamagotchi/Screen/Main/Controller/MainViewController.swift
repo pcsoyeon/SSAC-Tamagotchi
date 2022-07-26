@@ -126,7 +126,7 @@ final class MainViewController: UIViewController {
             $0?.font = .systemFont(ofSize: 13, weight: .medium)
         }
         
-        tamagotchiNameLabel.text = "  \(tamagotchi.name)  "
+        tamagotchiNameLabel.text = "  \(UserDefaults.standard.string(forKey: Constant.UserDefaults.tamagotchiName)!)  "
         tamagotchiNameLabel.layer.borderWidth = 1
         tamagotchiNameLabel.layer.borderColor = UIColor.foregroundColor.cgColor
         tamagotchiNameLabel.layer.cornerRadius = 3

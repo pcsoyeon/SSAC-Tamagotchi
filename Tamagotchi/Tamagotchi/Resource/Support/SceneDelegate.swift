@@ -23,15 +23,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let viewController = storyboard.instantiateViewController(withIdentifier: MainViewController.identifier) as! MainViewController
             
             window?.rootViewController = UINavigationViewController(rootViewController: viewController)
-            window?.makeKeyAndVisible()
         } else {
             let storyboard = UIStoryboard(name: "Select", bundle: nil)
             guard let viewController = storyboard.instantiateViewController(withIdentifier: UINavigationViewController.identifier) as? UINavigationViewController else { return }
             
             window?.rootViewController = viewController
-            window?.makeKeyAndVisible()
         }
-                
+        
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
