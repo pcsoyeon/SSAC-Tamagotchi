@@ -16,8 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
-        
-        print(UserDefaults.standard.bool(forKey: "First"))
+        window?.backgroundColor = .backgroundColor
         
         if UserDefaults.standard.bool(forKey: "First") {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
