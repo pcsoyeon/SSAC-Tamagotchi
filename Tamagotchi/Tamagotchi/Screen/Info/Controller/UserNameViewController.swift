@@ -50,9 +50,10 @@ final class UserNameViewController: UIViewController {
         userNameTextField.borderStyle = .none
         
         userNameTextField.text = "\(UserDefaults.standard.string(forKey: Constant.UserDefaults.UserName) ?? "대장")"
-        
         userNameTextField.textColor = .foregroundColor
         userNameTextField.tintColor = .foregroundColor
+        
+        userNameTextField.clearButtonMode = .whileEditing
         
         userNameTextField.delegate = self
     }
