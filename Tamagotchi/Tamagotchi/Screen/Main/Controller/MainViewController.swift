@@ -21,17 +21,17 @@ final class MainViewController: UIViewController {
             
             if level > 9 {
                 tamagotchiImageView.image = UIImage(named: "\(tamagotchiIndex)-\(9)")
-                UserDefaults.standard.set("\(tamagotchiIndex)-\(9)", forKey: Constant.UserDefaults.tamagotchiImageName)
+                UserDefaults.standard.set("\(tamagotchiIndex)-\(9)", forKey: Constant.UserDefaults.TamagotchiImageName)
             } else {
                 tamagotchiImageView.image = UIImage(named: "\(tamagotchiIndex)-\(level)")
-                UserDefaults.standard.set("\(tamagotchiIndex)-\(level)", forKey: Constant.UserDefaults.tamagotchiImageName)
+                UserDefaults.standard.set("\(tamagotchiIndex)-\(level)", forKey: Constant.UserDefaults.TamagotchiImageName)
             }
         }
     }
     
-    private var riceCount: Int = UserDefaults.standard.integer(forKey: Constant.UserDefaults.riceCount) {
+    private var riceCount: Int = UserDefaults.standard.integer(forKey: Constant.UserDefaults.RiceCount) {
         didSet {
-            UserDefaults.standard.set(riceCount, forKey: Constant.UserDefaults.riceCount)
+            UserDefaults.standard.set(riceCount, forKey: Constant.UserDefaults.RiceCount)
             
             tamagotchiInfoLabel.text = "LV\(level) • 밥알 \(riceCount)개 • 물방울 \(waterDropCount)개"
             
@@ -39,9 +39,9 @@ final class MainViewController: UIViewController {
         }
     }
     
-    private var waterDropCount: Int = UserDefaults.standard.integer(forKey: Constant.UserDefaults.waterDropCount) {
+    private var waterDropCount: Int = UserDefaults.standard.integer(forKey: Constant.UserDefaults.WaterDropCount) {
         didSet {
-            UserDefaults.standard.set(waterDropCount, forKey: Constant.UserDefaults.waterDropCount)
+            UserDefaults.standard.set(waterDropCount, forKey: Constant.UserDefaults.WaterDropCount)
             
             tamagotchiInfoLabel.text = "LV\(level) • 밥알 \(riceCount)개 • 물방울 \(waterDropCount)개"
             
@@ -51,12 +51,18 @@ final class MainViewController: UIViewController {
     
     internal var tamagotchiIndex: Int = 1 {
         didSet {
-            UserDefaults.standard.set("\(tamagotchiIndex)-\(level)", forKey: Constant.UserDefaults.tamagotchiImageName)
+            UserDefaults.standard.set("\(tamagotchiIndex)-\(level)", forKey: Constant.UserDefaults.TamagotchiImageName)
         }
     }
     
-    private var bubbleMessage: [String] = ["복습 합시다", "테이블 뷰 컨트롤러와 뷰 컨트롤러는 어떤 차이가 있을까요?", "배고파요. 밥 주세요.", "Github에 Push 해주세요.", "오늘도 복습하세요!!!", "1일 1커밋 하고 계신가요??", "지금 잠이 오세요? 열심히 사세요. \(UserDefaults.standard.string(forKey: "userName") ?? "대장")"]
-    
+    private var bubbleMessage: [String] = ["복습 합시다",
+                                           "테이블 뷰 컨트롤러와 뷰 컨트롤러는 어떤 차이가 있을까요?",
+                                           "배고파요. 밥 주세요.",
+                                           "Github에 Push 해주세요.",
+                                           "오늘도 복습하세요!!!",
+                                           "1일 1커밋 하고 계신가요??",
+                                           "지금 잠이 오세요? 열심히 사세요. \(UserDefaults.standard.string(forKey: "UserName") ?? "대장")"]
+
     // MARK: - UI Property
     
     @IBOutlet var lineViews: [UIView]!
@@ -78,74 +84,74 @@ final class MainViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        bubbleMessageLabel.text = bubbleMessage.randomElement()
-        setNavigationUI()
-        setStatusBar(.backgroundColor)
+        configureNavigationUI()
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUI()
+        configureUI()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(true)
+        super.viewWillDisappear(animated)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem?.tintColor = .foregroundColor
     }
     
     // MARK: - Custom Method
     
-    private func setNavigationUI() {
-        navigationItem.title = "\(UserDefaults.standard.string(forKey: Constant.UserDefaults.userName) ?? "대장")님의 다마고치"
+    private func configureNavigationUI() {
+        navigationItem.title = "\(UserDefaults.standard.string(forKey: Constant.UserDefaults.UserName) ?? "대장")님의 다마고치"
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.foregroundColor]
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle"), style: .plain, target: self, action: #selector(touchUpInfoButton))
         navigationItem.rightBarButtonItem?.tintColor = .foregroundColor
         
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.foregroundColor]
-        
         navigationController?.navigationBar.backgroundColor = .backgroundColor
+        setStatusBar(.backgroundColor)
     }
     
-    private func setUI() {
+    private func configureUI() {
         lineViews.forEach {
             $0.backgroundColor = .foregroundColor
         }
         
-        setImageView()
-        setLabel()
-        setTextField()
-        setButton()
-        setLabel()
+        configureImageView()
+        configureLabel()
+        configureTextField()
+        configureButton()
+        configureLabel()
     }
     
-    private func setImageView() {
+    private func configureImageView() {
         bubbleImageView.image = UIImage(named: "bubble")
         
         level = calculateLevel(riceCount: riceCount, waterDropCount: waterDropCount)
         
-        tamagotchiImageView.image = UIImage(named: UserDefaults.standard.string(forKey: Constant.UserDefaults.tamagotchiImageName) ?? "\(tamagotchiIndex)-\(level)")
+        tamagotchiImageView.image = UIImage(named: UserDefaults.standard.string(forKey: Constant.UserDefaults.TamagotchiImageName) ?? "\(tamagotchiIndex)-\(level)")
     }
     
-    private func setLabel() {
+    private func configureLabel() {
         [tamagotchiNameLabel, tamagotchiInfoLabel, bubbleMessageLabel].forEach {
             $0?.textColor = .foregroundColor
             $0?.font = .systemFont(ofSize: 13, weight: .medium)
         }
         
-        tamagotchiNameLabel.text = "  \(UserDefaults.standard.string(forKey: Constant.UserDefaults.tamagotchiName) ?? "다마고치")  "
+        tamagotchiNameLabel.text = "  \(UserDefaults.standard.string(forKey: Constant.UserDefaults.TamagotchiName) ?? "다마고치")  "
         tamagotchiNameLabel.layer.borderWidth = 1
         tamagotchiNameLabel.layer.borderColor = UIColor.foregroundColor.cgColor
         tamagotchiNameLabel.layer.cornerRadius = 3
         tamagotchiNameLabel.sizeToFit()
         
-        tamagotchiInfoLabel.text = "LV\(level) • 밥알 \(UserDefaults.standard.integer(forKey: Constant.UserDefaults.riceCount))개 • 물방울 \(UserDefaults.standard.integer(forKey: Constant.UserDefaults.waterDropCount))개"
+        tamagotchiInfoLabel.text = "LV\(level) • 밥알 \(UserDefaults.standard.integer(forKey: Constant.UserDefaults.RiceCount))개 • 물방울 \(UserDefaults.standard.integer(forKey: Constant.UserDefaults.WaterDropCount))개"
         
+        bubbleMessageLabel.text = bubbleMessage.randomElement()
         bubbleMessageLabel.textAlignment = .center
         bubbleMessageLabel.numberOfLines = 0
     }
     
-    private func setTextField() {
+    private func configureTextField() {
         [riceTextField, waterTextField].forEach {
             $0?.borderStyle = .none
             $0?.keyboardType = .numberPad
@@ -165,7 +171,7 @@ final class MainViewController: UIViewController {
         )
     }
     
-    private func setButton() {
+    private func configureButton() {
         riceButton.setImage(UIImage(systemName: "leaf.circle"), for: .normal)
         riceButton.setTitle("밥먹기", for: .normal)
         

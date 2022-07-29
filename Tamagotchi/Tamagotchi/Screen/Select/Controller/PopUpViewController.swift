@@ -37,12 +37,12 @@ final class PopUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUI()
+        configureUI()
     }
 
     // MARK: - Custom Method
     
-    private func setUI() {
+    private func configureUI() {
         view.backgroundColor = UIColor(white: 0, alpha: 0.2)
         
         backView.backgroundColor = .backgroundColor
@@ -50,18 +50,18 @@ final class PopUpViewController: UIViewController {
         
         tamagotchiImageView.image = UIImage(named: tamagotchi.image)
         
-        setLineView()
-        setLabel()
-        setButton()
+        configureLineView()
+        configureLabel()
+        configureButton()
     }
     
-    private func setLineView() {
+    private func configureLineView() {
         [firstLineView, secondLineView].forEach {
             $0?.backgroundColor = .foregroundColor
         }
     }
     
-    private func setLabel() {
+    private func configureLabel() {
         tamagotchiNameLabel.text = tamagotchi.name
         tamagotchiNameLabel.textColor = .foregroundColor
         tamagotchiNameLabel.font = .systemFont(ofSize: 13, weight: .regular)
@@ -73,7 +73,7 @@ final class PopUpViewController: UIViewController {
         tamagotchiDescriptionLabel.textAlignment = .center
     }
     
-    private func setButton() {
+    private func configureButton() {
         [cancelButton, startButton].forEach {
             var config = UIButton.Configuration.plain()
             config.baseForegroundColor = .foregroundColor
@@ -102,7 +102,7 @@ final class PopUpViewController: UIViewController {
     @IBAction func touchUpStartButton(_ sender: Any) {
         UserDefaults.standard.set(true, forKey: "First")
         
-        UserDefaults.standard.set("\(tamagotchi.name)", forKey: Constant.UserDefaults.tamagotchiName)
+        UserDefaults.standard.set("\(tamagotchi.name)", forKey: Constant.UserDefaults.TamagotchiName)
         
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         guard let viewController = storyBoard.instantiateViewController(withIdentifier: MainViewController.identifier) as? MainViewController else { return }

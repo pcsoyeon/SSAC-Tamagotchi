@@ -20,7 +20,7 @@ class TamagotchiCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Custom Method
     
-    internal func setUI() {
+    internal func configureUI() {
         contentView.backgroundColor = .clear
         
         tamagotchiImageView.layer.cornerRadius = tamagotchiImageView.frame.width / 2
@@ -33,7 +33,7 @@ class TamagotchiCollectionViewCell: UICollectionViewCell {
         tamagotchiNameLabel.layer.cornerRadius = 3
     }
     
-    internal func configureCell(_ data: TamagotchiDataModel) {
+    internal func initCell(_ data: TamagotchiDataModel) {
         tamagotchiImageView.image = UIImage(named: data.image)
         
         tamagotchiNameLabel.text = "  \(data.name)  "

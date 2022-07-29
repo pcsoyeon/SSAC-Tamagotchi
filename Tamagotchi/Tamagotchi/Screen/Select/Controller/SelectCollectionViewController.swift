@@ -48,29 +48,32 @@ final class SelectCollectionViewController: UICollectionViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setNavigationBarUI()
+        configureNavigationBarUI()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setCollectionView()
+        configureCollectionView()
     }
     
     // MARK: - Custom Method
     
-    private func setNavigationBarUI() {
+    private func configureNavigationBarUI() {
         navigationItem.title = viewType.title
+        setStatusBar(.backgroundColor)
     }
     
-    private func setCollectionView() {
+    private func configureCollectionView() {
         let layout = UICollectionViewFlowLayout()
         let spacing: CGFloat = 10
         let width = UIScreen.main.bounds.width - (spacing * 4)
+        
         layout.itemSize = CGSize(width: width / 3, height: (width / 3) * 1.2)
         layout.scrollDirection = .vertical
         layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
         layout.minimumLineSpacing = spacing
         layout.minimumInteritemSpacing = spacing
+        
         collectionView.collectionViewLayout = layout
         collectionView.backgroundColor = .backgroundColor
     }
@@ -85,8 +88,8 @@ extension SelectCollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TamagotchiCollectionViewCell.identifier, for: indexPath) as? TamagotchiCollectionViewCell else { return UICollectionViewCell() }
-        cell.setUI()
-        cell.configureCell(tamagotchis.tamagotchi[indexPath.item])
+        cell.configureUI()
+        cell.initCell(tamagotchis.tamagotchi[indexPath.item])
         return cell
     }
     

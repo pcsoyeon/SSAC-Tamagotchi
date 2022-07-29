@@ -19,13 +19,13 @@ final class InfoTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        userNameLabel.text = "\(UserDefaults.standard.string(forKey: "userName") ?? "대장")"
-        setNaivgationBarUI()
+        userNameLabel.text = "\(UserDefaults.standard.string(forKey: "UserName") ?? "대장")"
+        configureNaivgationBarUI()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setTableView()
+        configureTableView()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -36,7 +36,7 @@ final class InfoTableViewController: UITableViewController {
     
     // MARK: - Custom Method
     
-    private func setNaivgationBarUI() {
+    private func configureNaivgationBarUI() {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.foregroundColor]
         navigationItem.title = "설정"
         
@@ -44,10 +44,10 @@ final class InfoTableViewController: UITableViewController {
         navigationController?.addCustomBottomLine(color: .foregroundColor, height: 1)
     }
     
-    private func setTableView() {
+    private func configureTableView() {
         tableView.backgroundColor = .backgroundColor
         
-        userNameLabel.text = "\(UserDefaults.standard.string(forKey: Constant.UserDefaults.userName) ?? "대장")"
+        userNameLabel.text = "\(UserDefaults.standard.string(forKey: Constant.UserDefaults.UserName) ?? "대장")"
         userNameLabel.textColor = .foregroundColor
         
         userNameLabel.font = .systemFont(ofSize: 13, weight: .regular)
@@ -79,10 +79,10 @@ extension InfoTableViewController {
             
             let cancelButton = UIAlertAction(title: "아냐!", style: .cancel)
             let okayButton = UIAlertAction(title: "웅", style: .default) { _ in
-                UserDefaults.standard.removeObject(forKey: Constant.UserDefaults.tamagotchiName)
-                UserDefaults.standard.removeObject(forKey: Constant.UserDefaults.userName)
-                UserDefaults.standard.removeObject(forKey: Constant.UserDefaults.riceCount)
-                UserDefaults.standard.removeObject(forKey: Constant.UserDefaults.waterDropCount)
+                UserDefaults.standard.removeObject(forKey: Constant.UserDefaults.TamagotchiName)
+                UserDefaults.standard.removeObject(forKey: Constant.UserDefaults.UserName)
+                UserDefaults.standard.removeObject(forKey: Constant.UserDefaults.RiceCount)
+                UserDefaults.standard.removeObject(forKey: Constant.UserDefaults.WaterDropCount)
                 
                 let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
                 let sceneDelegate = windowScene?.delegate as? SceneDelegate

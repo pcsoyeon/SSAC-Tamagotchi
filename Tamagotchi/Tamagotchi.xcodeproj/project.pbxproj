@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		92158DDD2890031E0049A8FF /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92158DDC2890031E0049A8FF /* UINavigationController+Extension.swift */; };
+		925DCBE42893B0C2002C027E /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925DCBE32893B0C2002C027E /* UserDefaults.swift */; };
 		92AA1E13288D6A1700CB1D7E /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AA1E12288D6A1700CB1D7E /* UIColor+Extension.swift */; };
 		92AA1E15288D84CD00CB1D7E /* SelectCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AA1E14288D84CD00CB1D7E /* SelectCollectionViewController.swift */; };
 		92AA1E17288D850D00CB1D7E /* TamagotchiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AA1E16288D850D00CB1D7E /* TamagotchiCollectionViewCell.swift */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		92158DDC2890031E0049A8FF /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
+		925DCBE32893B0C2002C027E /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		92AA1E12288D6A1700CB1D7E /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		92AA1E14288D84CD00CB1D7E /* SelectCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCollectionViewController.swift; sourceTree = "<group>"; };
 		92AA1E16288D850D00CB1D7E /* TamagotchiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				92AA1E2A288E178300CB1D7E /* Constant.swift */,
+				925DCBE32893B0C2002C027E /* UserDefaults.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				92DA1C1C288B1EB000A21DBB /* TamagotchiDataModel.swift in Sources */,
 				92DA1C0A288B1D9E00A21DBB /* UIView+Extension.swift in Sources */,
 				92AA1E1D288D9ED600CB1D7E /* InfoTableViewController.swift in Sources */,
+				925DCBE42893B0C2002C027E /* UserDefaults.swift in Sources */,
 				92DA1BF5288B1D0300A21DBB /* MainViewController.swift in Sources */,
 				92DA1BF1288B1D0300A21DBB /* AppDelegate.swift in Sources */,
 				92AA1E17288D850D00CB1D7E /* TamagotchiCollectionViewCell.swift in Sources */,
