@@ -15,8 +15,6 @@ final class MainViewController: UIViewController {
     
     private var level: Int = 1 {
         didSet {
-            UserDefaults.standard.set(level, forKey: "level")
-            
             tamagotchiInfoLabel.text = "LV\(level) • 밥알 \(riceCount)개 • 물방울 \(waterDropCount)개"
             
             if level > 9 {
@@ -52,6 +50,7 @@ final class MainViewController: UIViewController {
     internal var tamagotchiIndex: Int = 1 {
         didSet {
             UserDefaults.standard.set("\(tamagotchiIndex)-\(level)", forKey: Constant.UserDefaults.TamagotchiImageName)
+            print(UserDefaults.standard.string(forKey: Constant.UserDefaults.TamagotchiImageName))
         }
     }
     
@@ -61,7 +60,7 @@ final class MainViewController: UIViewController {
                                            "Github에 Push 해주세요.",
                                            "오늘도 복습하세요!!!",
                                            "1일 1커밋 하고 계신가요??",
-                                           "지금 잠이 오세요? 열심히 사세요. \(UserDefaults.standard.string(forKey: "UserName") ?? "대장")"]
+                                           "지금 잠이 오세요? 열심히 사세요. \(UserDefaults.standard.string(forKey: Constant.UserDefaults.UserName) ?? "대장")"]
 
     // MARK: - UI Property
     
@@ -85,12 +84,14 @@ final class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configureNavigationUI()
+        print(UserDefaults.standard.string(forKey: Constant.UserDefaults.TamagotchiImageName))
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -110,6 +111,8 @@ final class MainViewController: UIViewController {
         
         navigationController?.navigationBar.backgroundColor = .backgroundColor
         setStatusBar(.backgroundColor)
+        
+        navigationController?.addCustomBottomLine(color: .foregroundColor, height: 1)
     }
     
     private func configureUI() {

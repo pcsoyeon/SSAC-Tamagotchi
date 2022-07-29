@@ -19,7 +19,7 @@ final class InfoTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        userNameLabel.text = "\(UserDefaults.standard.string(forKey: "UserName") ?? "대장")"
+        userNameLabel.text = "\(UserDefaults.standard.string(forKey: Constant.UserDefaults.UserName) ?? "대장")"
         configureNaivgationBarUI()
     }
 
@@ -49,7 +49,6 @@ final class InfoTableViewController: UITableViewController {
         
         userNameLabel.text = "\(UserDefaults.standard.string(forKey: Constant.UserDefaults.UserName) ?? "대장")"
         userNameLabel.textColor = .foregroundColor
-        
         userNameLabel.font = .systemFont(ofSize: 13, weight: .regular)
     }
 }
@@ -69,7 +68,7 @@ extension InfoTableViewController {
             self.navigationController?.pushViewController(viewController, animated: true)
         /// 다마고치 변경하기
         case 1:
-            let storyBoard = UIStoryboard(name: "Select", bundle: nil)
+            let storyBoard = UIStoryboard(name: Constant.Storyboard.Select, bundle: nil)
             guard let viewController = storyBoard.instantiateViewController(withIdentifier: SelectCollectionViewController.identifier) as? SelectCollectionViewController else { return }
             viewController.viewType = .channge
             self.navigationController?.pushViewController(viewController, animated: true)
@@ -80,6 +79,7 @@ extension InfoTableViewController {
             let cancelButton = UIAlertAction(title: "아냐!", style: .cancel)
             let okayButton = UIAlertAction(title: "웅", style: .default) { _ in
                 UserDefaults.standard.removeObject(forKey: Constant.UserDefaults.TamagotchiName)
+                UserDefaults.standard.removeObject(forKey: Constant.UserDefaults.TamagotchiImageName)
                 UserDefaults.standard.removeObject(forKey: Constant.UserDefaults.UserName)
                 UserDefaults.standard.removeObject(forKey: Constant.UserDefaults.RiceCount)
                 UserDefaults.standard.removeObject(forKey: Constant.UserDefaults.WaterDropCount)
@@ -87,7 +87,7 @@ extension InfoTableViewController {
                 let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
                 let sceneDelegate = windowScene?.delegate as? SceneDelegate
                 
-                let storyBoard = UIStoryboard(name: "Select", bundle: nil)
+                let storyBoard = UIStoryboard(name: Constant.Storyboard.Select, bundle: nil)
                 guard let viewController = storyBoard.instantiateViewController(withIdentifier: UINavigationViewController.identifier) as? UINavigationViewController else { return }
                 
                 sceneDelegate?.window?.rootViewController = viewController

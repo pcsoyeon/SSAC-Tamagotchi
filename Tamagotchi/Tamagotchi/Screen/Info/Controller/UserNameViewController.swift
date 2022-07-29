@@ -67,7 +67,7 @@ final class UserNameViewController: UIViewController {
     
     @objc func touchUpSaveButton() {
         if let userName = userNameTextField.text {
-            UserDefaults.standard.set(userName, forKey: "userName")
+            UserDefaults.standard.set(userName, forKey: Constant.UserDefaults.UserName)
             self.navigationController?.popViewController(animated: true)
         }
     }

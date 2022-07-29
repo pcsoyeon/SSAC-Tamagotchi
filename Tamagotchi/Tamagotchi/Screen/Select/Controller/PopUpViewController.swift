@@ -100,11 +100,11 @@ final class PopUpViewController: UIViewController {
     }
     
     @IBAction func touchUpStartButton(_ sender: Any) {
-        UserDefaults.standard.set(true, forKey: "First")
+        UserDefaults.standard.set(true, forKey: Constant.UserDefaults.First)
         
         UserDefaults.standard.set("\(tamagotchi.name)", forKey: Constant.UserDefaults.TamagotchiName)
         
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let storyBoard = UIStoryboard(name: Constant.Storyboard.Main, bundle: nil)
         guard let viewController = storyBoard.instantiateViewController(withIdentifier: MainViewController.identifier) as? MainViewController else { return }
         viewController.tamagotchiIndex = self.tamagotchiIndex
         

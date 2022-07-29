@@ -16,9 +16,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
-        window?.backgroundColor = .backgroundColor
+        window?.backgroundColor = .backgroundColor // 허상 .. -> MARK: - TODO: UIWindow 알아보기 ..
         
-        if UserDefaults.standard.bool(forKey: "First") {
+//        UINavigationBar.appearance().backgroundColor = .blue
+//        UILabel.appearance().textColor = .blue
+        
+        if UserDefaults.standard.bool(forKey: Constant.UserDefaults.First) {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let viewController = storyboard.instantiateViewController(withIdentifier: MainViewController.identifier) as! MainViewController
             

@@ -15,6 +15,8 @@ extension Constant {
         static var UserName: String = "UserName"
         static var RiceCount: String = "RiceCount"
         static var WaterDropCount: String = "WaterDropCount"
+        
+        static var First: String = "First"
     }
 }
 
