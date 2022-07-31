@@ -25,7 +25,7 @@ class TamagotchiCollectionViewCell: UICollectionViewCell {
         
         tamagotchiImageView.layer.cornerRadius = tamagotchiImageView.frame.width / 2
 
-        tamagotchiNameLabel.font = .systemFont(ofSize: 13, weight: .regular)
+        tamagotchiNameLabel.font = .pretendard(type: .regular, size: 13)
         tamagotchiNameLabel.textColor = .foregroundColor
         tamagotchiNameLabel.sizeToFit()
         tamagotchiNameLabel.layer.borderColor = UIColor.foregroundColor.cgColor

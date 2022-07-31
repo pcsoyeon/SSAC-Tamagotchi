@@ -20,7 +20,7 @@
                         <sections>
                             <tableViewSection headerTitle="Section-1" id="WVG-SN-Z1G">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="ReH-lo-nZj" detailTextLabel="zy1-00-acj" imageView="dE9-j4-oRv" style="IBUITableViewCellStyleValue1" id="SaG-ZN-9Ca">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="ReH-lo-nZj" detailTextLabel="zy1-00-acj" imageView="dE9-j4-oRv" style="IBUITableViewCellStyleValue1" id="SaG-ZN-9Ca">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SaG-ZN-9Ca" id="JG0-yj-hHE">
@@ -50,7 +50,7 @@
                                         <color key="backgroundColor" name="backgroundColor"/>
                                         <color key="tintColor" name="foregroundColor"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="e43-ul-Qr8" detailTextLabel="Q1f-d7-sIQ" imageView="Bqo-np-8Ue" style="IBUITableViewCellStyleValue1" id="zio-PI-hAc">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="e43-ul-Qr8" detailTextLabel="Q1f-d7-sIQ" imageView="Bqo-np-8Ue" style="IBUITableViewCellStyleValue1" id="zio-PI-hAc">
                                         <rect key="frame" x="0.0" y="88" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zio-PI-hAc" id="JEQ-Bg-iSd">
@@ -80,7 +80,7 @@
                                         <color key="backgroundColor" name="backgroundColor"/>
                                         <color key="tintColor" name="foregroundColor"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="IMk-3A-m6X" detailTextLabel="hYe-je-KfR" imageView="ymh-Nm-gMd" style="IBUITableViewCellStyleValue1" id="r9c-0u-IlJ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="IMk-3A-m6X" detailTextLabel="hYe-je-KfR" imageView="ymh-Nm-gMd" style="IBUITableViewCellStyleValue1" id="r9c-0u-IlJ">
                                         <rect key="frame" x="0.0" y="131.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="r9c-0u-IlJ" id="PRd-Hs-s16">
@@ -110,6 +110,33 @@
                                         <color key="backgroundColor" name="backgroundColor"/>
                                         <color key="tintColor" name="foregroundColor"/>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Ijy-RI-YqO">
+                                        <rect key="frame" x="0.0" y="175" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ijy-RI-YqO" id="GTe-sY-CsL">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2J-ZO-pzn">
+                                                    <rect key="frame" x="20" y="11.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="41D-Z1-PnE">
+                                                    <rect key="frame" x="345" y="6.5" width="51" height="31"/>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="41D-Z1-PnE" secondAttribute="trailing" constant="20" id="7BE-fF-Fsd"/>
+                                                <constraint firstItem="v2J-ZO-pzn" firstAttribute="leading" secondItem="GTe-sY-CsL" secondAttribute="leading" constant="20" id="9Y5-Th-6EF"/>
+                                                <constraint firstItem="41D-Z1-PnE" firstAttribute="centerY" secondItem="GTe-sY-CsL" secondAttribute="centerY" id="MDD-s8-kLq"/>
+                                                <constraint firstItem="v2J-ZO-pzn" firstAttribute="centerY" secondItem="GTe-sY-CsL" secondAttribute="centerY" id="RUO-CT-DqY"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="backgroundColor"/>
+                                        <color key="tintColor" name="foregroundColor"/>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -119,6 +146,8 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="switchButton" destination="41D-Z1-PnE" id="uq6-Cx-zck"/>
+                        <outlet property="switchLabel" destination="v2J-ZO-pzn" id="S3Q-oX-5ZU"/>
                         <outlet property="userNameLabel" destination="zy1-00-acj" id="5bW-8l-53S"/>
                     </connections>
                 </tableViewController>

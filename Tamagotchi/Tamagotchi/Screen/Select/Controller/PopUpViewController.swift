@@ -64,11 +64,11 @@ final class PopUpViewController: UIViewController {
     private func configureLabel() {
         tamagotchiNameLabel.text = tamagotchi.name
         tamagotchiNameLabel.textColor = .foregroundColor
-        tamagotchiNameLabel.font = .systemFont(ofSize: 13, weight: .regular)
+        tamagotchiNameLabel.font = .pretendard(type: .regular, size: 13)
         
         tamagotchiDescriptionLabel.text = tamagotchi.description
         tamagotchiDescriptionLabel.textColor = .foregroundColor
-        tamagotchiDescriptionLabel.font = .systemFont(ofSize: 14, weight: .regular)
+        tamagotchiDescriptionLabel.font = .pretendard(type: .regular, size: 14)
         tamagotchiDescriptionLabel.numberOfLines = 0
         tamagotchiDescriptionLabel.textAlignment = .center
     }
@@ -81,13 +81,13 @@ final class PopUpViewController: UIViewController {
             $0?.configuration = config
         }
         
-        let cancelAttribute = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13)]
+        let cancelAttribute = [NSAttributedString.Key.font: UIFont.pretendard(type: .regular, size: 13)]
         let cancelAttributedTitle = NSAttributedString(string: "취소", attributes: cancelAttribute)
         cancelButton.setAttributedTitle(cancelAttributedTitle, for: .normal)
         
         cancelButton.backgroundColor = .foregroundColor.withAlphaComponent(0.1)
         
-        let startAttribute = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13)]
+        let startAttribute = [NSAttributedString.Key.font: UIFont.pretendard(type: .regular, size: 13)]
         let startAttributedTitle = NSAttributedString(string: "\(viewType.buttonTitle)", attributes: startAttribute)
         startButton.setAttributedTitle(startAttributedTitle, for: .normal)
         startButton.setTitle("\(viewType.buttonTitle)", for: .normal)

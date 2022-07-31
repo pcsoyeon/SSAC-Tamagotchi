@@ -61,7 +61,7 @@ final class UserNameViewController: UIViewController {
     private func setLabel() {
         warningLabel.text = "대장 이름은 2글자 이상 6글자 이하까지 가능합니다."
         warningLabel.textColor = .red
-        warningLabel.font = .systemFont(ofSize: 13, weight: .medium)
+        warningLabel.font = .pretendard(type: .medium, size: 13)
     }
     
     // MARK: - @objc

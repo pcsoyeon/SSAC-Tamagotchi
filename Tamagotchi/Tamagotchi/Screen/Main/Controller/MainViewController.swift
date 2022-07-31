@@ -92,7 +92,6 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -139,7 +138,7 @@ final class MainViewController: UIViewController {
     private func configureLabel() {
         [tamagotchiNameLabel, tamagotchiInfoLabel, bubbleMessageLabel].forEach {
             $0?.textColor = .foregroundColor
-            $0?.font = .systemFont(ofSize: 13, weight: .medium)
+            $0?.font = .pretendard(type: .regular, size: 13)
         }
         
         tamagotchiNameLabel.text = "  \(UserDefaults.standard.string(forKey: Constant.UserDefaults.TamagotchiName) ?? "다마고치")  "
@@ -196,11 +195,11 @@ final class MainViewController: UIViewController {
             $0?.configuration = config
         }
         
-        let riceAttribute = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13)]
+        let riceAttribute = [NSAttributedString.Key.font: UIFont.pretendard(type: .regular, size: 13)]
         let riceAttributedTitle = NSAttributedString(string: "밥먹기", attributes: riceAttribute)
         riceButton.setAttributedTitle(riceAttributedTitle, for: .normal)
         
-        let waterAttribute = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13)]
+        let waterAttribute = [NSAttributedString.Key.font: UIFont.pretendard(type: .regular, size: 13)]
         let waterAttributedTitle = NSAttributedString(string: "물먹기", attributes: waterAttribute)
         waterButton.setAttributedTitle(waterAttributedTitle, for: .normal)
     }

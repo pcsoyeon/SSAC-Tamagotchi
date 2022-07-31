@@ -55,11 +55,11 @@ final class InfoTableViewController: UITableViewController {
     private func configureLabel() {
         userNameLabel.text = UserDefaults.standard.string(forKey: Constant.UserDefaults.UserName) ?? "대장"
         userNameLabel.textColor = .foregroundColor
-        userNameLabel.font = .systemFont(ofSize: 13, weight: .regular)
+        userNameLabel.font = .pretendard(type: .regular, size: 13)
         
         switchLabel.text = "알림"
         switchLabel.textColor = .black
-        switchLabel.font = .systemFont(ofSize: 13, weight: .regular)
+        switchLabel.font = .pretendard(type: .regular, size: 13)
         
         switchButton.isOn = true
     }
