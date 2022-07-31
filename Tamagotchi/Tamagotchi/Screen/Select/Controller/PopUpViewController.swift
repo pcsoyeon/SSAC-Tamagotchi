@@ -27,11 +27,11 @@ final class PopUpViewController: UIViewController {
     
     // MARK: - Property
     
-    internal var tamagotchi: TamagotchiDataModel = TamagotchiDataModel(image: "", name: "", description: "", level: 1)
+    var tamagotchi: TamagotchiDataModel = TamagotchiDataModel(image: "", name: "", description: "", level: 1)
     
-    internal var tamagotchiIndex: Int = 1
+    var tamagotchiIndex: Int = 1
     
-    internal var viewType: ViewType = .select
+    var viewType: ViewType = .select
     
     // MARK: - Life Cycle
     

@@ -7,6 +7,12 @@
 
 import UIKit
 
+enum TamagotchiType: String, CaseIterable {
+    case ddaggem
+    case bangsil
+    case banzzak
+}
+
 final class MainViewController: UIViewController {
 
     // MARK: - Property
@@ -19,10 +25,8 @@ final class MainViewController: UIViewController {
             
             if level > 9 {
                 tamagotchiImageView.image = UIImage(named: "\(tamagotchiIndex)-\(9)")
-                UserDefaults.standard.set("\(tamagotchiIndex)-\(9)", forKey: Constant.UserDefaults.TamagotchiImageName)
             } else {
                 tamagotchiImageView.image = UIImage(named: "\(tamagotchiIndex)-\(level)")
-                UserDefaults.standard.set("\(tamagotchiIndex)-\(level)", forKey: Constant.UserDefaults.TamagotchiImageName)
             }
         }
     }
@@ -47,10 +51,9 @@ final class MainViewController: UIViewController {
         }
     }
     
-    internal var tamagotchiIndex: Int = 1 {
+    var tamagotchiIndex: Int = UserDefaults.standard.integer(forKey: Constant.UserDefaults.TamagotchiIndex) {
         didSet {
-            UserDefaults.standard.set("\(tamagotchiIndex)-\(level)", forKey: Constant.UserDefaults.TamagotchiImageName)
-            print(UserDefaults.standard.string(forKey: Constant.UserDefaults.TamagotchiImageName))
+            UserDefaults.standard.set(tamagotchiIndex, forKey: Constant.UserDefaults.TamagotchiIndex)
         }
     }
     
@@ -84,8 +87,6 @@ final class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configureNavigationUI()
-        print(UserDefaults.standard.string(forKey: Constant.UserDefaults.TamagotchiImageName))
-        
     }
     
     override func viewDidLoad() {
@@ -132,7 +133,7 @@ final class MainViewController: UIViewController {
         
         level = calculateLevel(riceCount: riceCount, waterDropCount: waterDropCount)
         
-        tamagotchiImageView.image = UIImage(named: UserDefaults.standard.string(forKey: Constant.UserDefaults.TamagotchiImageName) ?? "\(tamagotchiIndex)-\(level)")
+        tamagotchiImageView.image = UIImage(named: "\(tamagotchiIndex)-\(level)")
     }
     
     private func configureLabel() {
