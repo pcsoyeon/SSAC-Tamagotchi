@@ -38,7 +38,7 @@ final class SelectCollectionViewController: UICollectionViewController {
        
     private var tamagotchis: Tamagotchi = Tamagotchi()
     
-    internal var viewType: ViewType = .select {
+    var viewType: ViewType = .select {
         didSet {
             navigationItem.title = viewType.title
         }
@@ -102,6 +102,8 @@ extension SelectCollectionViewController {
             viewController.tamagotchiIndex = indexPath.item + 1
             viewController.viewType = self.viewType
             present(viewController, animated: true)
+        } else {
+            showToast(message: "아직 준비중입니다 😊", font: UIFont.systemFont(ofSize: 14, weight: .regular))
         }
     }
 }
