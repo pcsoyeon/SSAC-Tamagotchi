@@ -9,14 +9,14 @@ import Foundation
 
 extension Constant {
     struct UserDefaults {
-        static var TamagotchiName: String = "TamagotchiName"
-        static var TamagotchiImageName: String = "TamagotchiImageName"
+        static let TamagotchiName: String = "TamagotchiName"
+        static let TamagotchiIndex: String = "TamagotchiIndex"
         
-        static var UserName: String = "UserName"
-        static var RiceCount: String = "RiceCount"
-        static var WaterDropCount: String = "WaterDropCount"
+        static let UserName: String = "UserName"
+        static let RiceCount: String = "RiceCount"
+        static let WaterDropCount: String = "WaterDropCount"
         
-        static var First: String = "First"
+        static let First: String = "First"
     }
 }
 
