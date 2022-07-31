@@ -70,7 +70,7 @@ final class InfoTableViewController: UITableViewController {
         let cancelButton = UIAlertAction(title: "아냐!", style: .cancel)
         let okayButton = UIAlertAction(title: "웅", style: .default) { _ in
             UserDefaults.standard.removeObject(forKey: Constant.UserDefaults.TamagotchiName)
-            UserDefaults.standard.removeObject(forKey: Constant.UserDefaults.TamagotchiImageName)
+            UserDefaults.standard.removeObject(forKey: Constant.UserDefaults.TamagotchiIndex)
             UserDefaults.standard.removeObject(forKey: Constant.UserDefaults.UserName)
             UserDefaults.standard.removeObject(forKey: Constant.UserDefaults.RiceCount)
             UserDefaults.standard.removeObject(forKey: Constant.UserDefaults.WaterDropCount)
@@ -108,7 +108,7 @@ final class InfoTableViewController: UITableViewController {
 
 extension InfoTableViewController {
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0
+        return CGFloat.leastNormalMagnitude
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
