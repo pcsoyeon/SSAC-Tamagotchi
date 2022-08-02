@@ -22,7 +22,7 @@ final class InfoTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        userNameLabel.text = UserDefaults.standard.string(forKey: Constant.UserDefaults.UserName) ?? "대장"
+        userNameLabel.text = UserDefaults.standard.string(forKey: Constant.UserDefaults.UserName) ?? Constant.User.UserName
         configureNaivgationBarUI()
     }
 
@@ -53,7 +53,7 @@ final class InfoTableViewController: UITableViewController {
     }
     
     private func configureLabel() {
-        userNameLabel.text = UserDefaults.standard.string(forKey: Constant.UserDefaults.UserName) ?? "대장"
+        userNameLabel.text = UserDefaults.standard.string(forKey: Constant.UserDefaults.UserName) ?? Constant.User.UserName
         userNameLabel.textColor = .foregroundColor
         userNameLabel.font = .pretendard(type: .regular, size: 13)
         

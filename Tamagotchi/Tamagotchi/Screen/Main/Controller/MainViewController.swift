@@ -103,7 +103,7 @@ final class MainViewController: UIViewController {
     // MARK: - Custom Method
     
     private func configureNavigationUI() {
-        navigationItem.title = "\(UserDefaults.standard.string(forKey: Constant.UserDefaults.UserName) ?? "대장")님의 다마고치"
+        navigationItem.title = "\(UserDefaults.standard.string(forKey: Constant.UserDefaults.UserName) ?? Constant.User.UserName)님의 다마고치"
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.foregroundColor]
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle"), style: .plain, target: self, action: #selector(touchUpInfoButton))

@@ -49,7 +49,7 @@ final class UserNameViewController: UIViewController {
     private func setTextField() {
         userNameTextField.borderStyle = .none
         
-        userNameTextField.text = UserDefaults.standard.string(forKey: Constant.UserDefaults.UserName) ?? "대장"
+        userNameTextField.text = UserDefaults.standard.string(forKey: Constant.UserDefaults.UserName) ?? Constant.User.UserName
         userNameTextField.textColor = .foregroundColor
         userNameTextField.tintColor = .foregroundColor
         

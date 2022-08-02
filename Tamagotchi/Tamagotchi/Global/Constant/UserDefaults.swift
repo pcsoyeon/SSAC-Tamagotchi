@@ -19,4 +19,3 @@ extension Constant {
         static let First: String = "First"
     }
 }
-

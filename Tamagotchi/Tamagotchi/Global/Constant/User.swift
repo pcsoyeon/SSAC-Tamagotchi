@@ -8,7 +8,7 @@
 import Foundation
 
 extension Constant {
-    struct UserName {
+    struct User {
         static let UserName: String = "대장"
     }
 }
