@@ -9,9 +9,7 @@ import UIKit
 
 final class InfoTableViewController: UITableViewController {
     
-    // MARK: - Property
-    
-    static let identifier = "InfoTableViewController"
+    // MARK: - UI Property
     
     @IBOutlet weak var userNameLabel: UILabel!
     
@@ -92,13 +90,13 @@ final class InfoTableViewController: UITableViewController {
     }
     
     private func pushToChangeUserName() {
-        guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: UserNameViewController.identifier) as? UserNameViewController else { return }
+        guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: UserNameViewController.reuseIdentifier) as? UserNameViewController else { return }
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     private func pushToChangeTamagotchi() {
         let storyBoard = UIStoryboard(name: Constant.Storyboard.Select, bundle: nil)
-        guard let viewController = storyBoard.instantiateViewController(withIdentifier: SelectCollectionViewController.identifier) as? SelectCollectionViewController else { return }
+        guard let viewController = storyBoard.instantiateViewController(withIdentifier: SelectCollectionViewController.reuseIdentifier) as? SelectCollectionViewController else { return }
         viewController.viewType = .channge
         self.navigationController?.pushViewController(viewController, animated: true)
     }

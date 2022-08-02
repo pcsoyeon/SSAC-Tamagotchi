@@ -8,9 +8,9 @@
 import UIKit
 
 final class PopUpViewController: UIViewController {
-    
-    static let identifier = "TamagochiDetailViewController"
 
+    // MARK: - UI Property
+    
     @IBOutlet weak var backView: UIView!
     
     @IBOutlet weak var tamagotchiImageView: UIImageView!
@@ -105,7 +105,7 @@ final class PopUpViewController: UIViewController {
         UserDefaults.standard.set("\(tamagotchi.name)", forKey: Constant.UserDefaults.TamagotchiName)
         
         let storyBoard = UIStoryboard(name: Constant.Storyboard.Main, bundle: nil)
-        guard let viewController = storyBoard.instantiateViewController(withIdentifier: MainViewController.identifier) as? MainViewController else { return }
+        guard let viewController = storyBoard.instantiateViewController(withIdentifier: MainViewController.reuseIdentifier) as? MainViewController else { return }
         viewController.tamagotchiIndex = self.tamagotchiIndex
         
         let destinationViewController = UINavigationViewController(rootViewController: viewController)

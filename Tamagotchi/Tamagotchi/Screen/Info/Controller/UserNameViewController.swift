@@ -9,10 +9,6 @@ import UIKit
 
 final class UserNameViewController: UIViewController {
     
-    // MARK: - Property
-    
-    static let identifier = "UserNameViewController"
-
     // MARK: - UI Property
     
     @IBOutlet weak var userNameTextField: UITextField!

@@ -14,10 +14,6 @@ enum TamagotchiType: String, CaseIterable {
 }
 
 final class MainViewController: UIViewController {
-
-    // MARK: - Property
-    
-    static let identifier = "MainViewController"
     
     private var level: Int = 1 {
         didSet {
@@ -223,7 +219,7 @@ final class MainViewController: UIViewController {
     
     @objc func touchUpInfoButton() {
         let storyBoard = UIStoryboard(name: "Info", bundle: nil)
-        guard let viewController = storyBoard.instantiateViewController(withIdentifier: InfoTableViewController.identifier) as? InfoTableViewController else { return }
+        guard let viewController = storyBoard.instantiateViewController(withIdentifier: InfoTableViewController.reuseIdentifier) as? InfoTableViewController else { return }
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     

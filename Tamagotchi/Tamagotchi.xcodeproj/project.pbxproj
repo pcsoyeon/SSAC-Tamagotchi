@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		92158DDD2890031E0049A8FF /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92158DDC2890031E0049A8FF /* UINavigationController+Extension.swift */; };
+		9249A12628998C1E007DDBD1 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9249A12528998C1E007DDBD1 /* ReusableViewProtocol.swift */; };
 		925DCBE42893B0C2002C027E /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925DCBE32893B0C2002C027E /* UserDefaults.swift */; };
 		925DCBE62893BF0A002C027E /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925DCBE52893BF0A002C027E /* Storyboard.swift */; };
 		928974E72898328A0047476F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928974E62898328A0047476F /* User.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		92158DDC2890031E0049A8FF /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
+		9249A12528998C1E007DDBD1 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
 		925DCBE32893B0C2002C027E /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		925DCBE52893BF0A002C027E /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		928974E62898328A0047476F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -85,6 +87,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9249A12428998C07007DDBD1 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				9249A12528998C1E007DDBD1 /* ReusableViewProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		92AA1E1A288D9EBF00CB1D7E /* Info */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +193,7 @@
 		92DA1C06288B1D3D00A21DBB /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				9249A12428998C07007DDBD1 /* Protocol */,
 				92AA1E29288E177500CB1D7E /* Constant */,
 				92DA1C07288B1D6C00A21DBB /* Extension */,
 			);
@@ -383,6 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				928974E72898328A0047476F /* User.swift in Sources */,
+				9249A12628998C1E007DDBD1 /* ReusableViewProtocol.swift in Sources */,
 				92DA1C1E288B93EA00A21DBB /* UINavigationViewController.swift in Sources */,
 				92AA1E26288DC3BB00CB1D7E /* UserNameViewController.swift in Sources */,
 				92DA1C1C288B1EB000A21DBB /* TamagotchiDataModel.swift in Sources */,

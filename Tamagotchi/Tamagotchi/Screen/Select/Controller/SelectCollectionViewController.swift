@@ -31,10 +31,6 @@ enum ViewType {
 }
 
 final class SelectCollectionViewController: UICollectionViewController {
-
-    // MARK: - Property
-    
-    static let identifier = "SelectCollectionViewController"
        
     private var tamagotchis: Tamagotchi = Tamagotchi()
     
@@ -87,7 +83,7 @@ extension SelectCollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TamagotchiCollectionViewCell.identifier, for: indexPath) as? TamagotchiCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TamagotchiCollectionViewCell.reuseIdentifier, for: indexPath) as? TamagotchiCollectionViewCell else { return UICollectionViewCell() }
         cell.configureUI()
         cell.initCell(tamagotchis.tamagotchi[indexPath.item])
         return cell
@@ -95,7 +91,7 @@ extension SelectCollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.item < 3 {
-            guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: PopUpViewController.identifier) as? PopUpViewController else { return }
+            guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: PopUpViewController.reuseIdentifier) as? PopUpViewController else { return }
             viewController.modalTransitionStyle = .coverVertical
             viewController.modalPresentationStyle = .overCurrentContext
             viewController.tamagotchi = tamagotchis.tamagotchi[indexPath.item]

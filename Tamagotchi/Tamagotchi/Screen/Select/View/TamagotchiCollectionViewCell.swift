@@ -9,10 +9,6 @@ import UIKit
 
 class TamagotchiCollectionViewCell: UICollectionViewCell {
     
-    // MARK: - Property
-    
-    static let identifier = "TamagotchiCollectionViewCell"
-    
     // MARK: - UI Property
     
     @IBOutlet weak var tamagotchiImageView: UIImageView!
